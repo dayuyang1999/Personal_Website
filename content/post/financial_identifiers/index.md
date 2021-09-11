@@ -65,7 +65,7 @@ such as:
 
 Researchers can perform the foloowing operations with WRDS Linking tables:
 
-1. Link any type of identifier (ticker, CUSIP, PERMNO, etc.) to GVKEY and one another.
+- Link any type of identifier (ticker, CUSIP, PERMNO, etc.) to GVKEY and one another.
 On Home page, select CRSP > CRSP/Compustat Merged > Linking Table. To use, do the following:
   - Step 1: Apply company codes individually, or as a list, or choose the entire database.
   - Step 2 (optional): Select individual linking options if needed. The linking types are listed as mnemonics. To find the meaning of each mnemonic, in Step 3 click ? icon next to Link Type Code variable.
@@ -73,12 +73,12 @@ On Home page, select CRSP > CRSP/Compustat Merged > Linking Table. To use, do th
   - Step 4: Select the output format.
   - Click Submit Query.
 
-1. Convert tickers or NCUSIP codes into PERMCO or PERMNO. (NCUSIP is a historical eight digit CUSIP assigned at the equity issue). 
+- Convert tickers or NCUSIP codes into PERMCO or PERMNO. (NCUSIP is a historical eight digit CUSIP assigned at the equity issue). 
   - On Home page, select CRSP > Tools > Translate to PERMCO/PERMNO​
-1. Download link table between various heavily used databases on WRDS platform, such as IBES CRSP linking file.
+- Download link table between various heavily used databases on WRDS platform, such as IBES CRSP linking file.
   - On Home page, select Linking Suite by WRDS.
-1. Convert 8-digit CUSIPS into 9 and 6-digit CUSIPs.
-1. Convert 9-digit CUSIPS into 8 and 6-digit CUSIPs.
+- Convert 8-digit CUSIPS into 9 and 6-digit CUSIPs.
+- Convert 9-digit CUSIPS into 8 and 6-digit CUSIPs.
   - On Home page, select Compustat-Capital IQ > Tools > CUSIP Converter
 
 
@@ -86,9 +86,9 @@ On Home page, select CRSP > CRSP/Compustat Merged > Linking Table. To use, do th
 
 Some researchers also constructed their own linking tables such as:
 
-1. [CIK-CUSIP Mapping](https://github.com/leoliu0/cik-cusip-mapping)
-2. [Takeover Deal-GVKEY Mapping](https://github.com/dayuyang1999/SDC-to-Compustat-Mapping)
-3. ...
+- [CIK-CUSIP Mapping](https://github.com/leoliu0/cik-cusip-mapping)
+- [Takeover Deal-GVKEY Mapping](https://github.com/dayuyang1999/SDC-to-Compustat-Mapping)
+- ...
 
 However, after manually compared, they are not as reliable as the WRDS mapping. So I recommend use WRDS mapping if your institution subscribe this.
 
