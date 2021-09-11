@@ -28,7 +28,7 @@ education:
   courses:
   - course: Ph.D. in Financial Analytics
     institution: University of Delaware
-  - course: M.S in Computer Science
+  - course: M.S. in Computer Science
     institution: Georgia Institute of Technology
 
 

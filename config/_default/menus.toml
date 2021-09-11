@@ -10,14 +10,14 @@
 
 [[main]]
   name = "All Posts"
-  url = "posts/"
+  url = "post/"
   weight = 20
 
 
 
 # existing tags:
 # Python Basics
-# 
+# FinTech
 
 [[main]]
   name = "Posts by Tags"
