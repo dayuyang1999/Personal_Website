@@ -13,6 +13,11 @@
   url = "posts/"
   weight = 20
 
+[[main]]
+  name = "Tags"
+  url = "tags/"
+  weight = 20
+
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/media/resume.pdf` and uncomment the lines below.
