@@ -33,7 +33,7 @@ projects: []
 
 # Some Identifier Changes
 
-You think the person at 1007 Mountain Drive, Gotham City is the Batman? Not exactly. The Batman is pretty rich. He has a lot of real properties in different time.
+You think the person at 1007 Mountain Drive, Gotham City is the Batman? Not exactly. The Batman is pretty rich. He stays in different real properties in different time.
 
 - So some financial identifiers are like "the home address of Batman",  they change over time:
   - CUSIP
