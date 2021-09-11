@@ -6,7 +6,7 @@ subtitle: ""
 summary: "You successfully installed the module but still unable to import it"
 authors: ["Dayu Yang"]
 tags: ["python"]
-categories: ["academic"]
+categories: ["deep learning"]
 date: 2021-09-10T20:56:55-04:00
 lastmod: 2021-09-10T20:56:55-04:00
 featured: false

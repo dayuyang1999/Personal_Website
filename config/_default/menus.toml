@@ -13,10 +13,19 @@
   url = "posts/"
   weight = 20
 
+
+
+# existing tags:
+# Python Basics
+# Deep Learning
+# Computer Science Basics
+# 
+
 [[main]]
-  name = "Tags"
+  name = "Posts by Tags"
   url = "tags/"
   weight = 20
+
 
 
 # Link to a PDF of your resume/CV from the menu.

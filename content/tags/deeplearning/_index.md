@@ -1,5 +1,5 @@
 ---
-title: Python Basics
+title: Deep Learning
 cms_exclude: true
 
 # View.
