@@ -5,7 +5,7 @@ title: "A Function That Helps You Write WRDS SQL Query"
 subtitle: ""
 summary: "if you are not familar with SQL, this function may be a life saver"
 authors: 
-- Dayu Yang
+- Dylan Yang
 tags: 
 - FinTech
 categories: []
