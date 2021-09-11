@@ -1,12 +1,12 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Merger And Acquisition, Good Scholars"
+title: "Top Scholars researching Merger And Acquisition"
 subtitle: ""
 summary: "Subscribe Those Channels!"
 authors: []
 tags:
-- Finance
+- Merge and Acquisition
 categories: []
 date: 2021-09-11T18:01:55-04:00
 lastmod: 2021-09-11T18:01:55-04:00
