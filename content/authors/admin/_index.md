@@ -70,5 +70,3 @@ highlight_name: false
 Dylan Yang is a 2nd-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
-
-He is super passionate about Automobile Industry and equipped with comprehensive knowledge ranging from (not limited to) automobile marketing to mechanical details. His dream is to bring the state-of-the-art quantitivate analysis to automobile marketing management.
