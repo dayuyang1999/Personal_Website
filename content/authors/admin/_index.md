@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Dayu Yang
+title: Dylan Yang
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Ph.D. Student in Financial Analytics
+role: Ph.D. Student in [Financial Analytics](https://lerner.udel.edu/programs/phd-programs/financial-services-analytics-phd/)
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -67,6 +67,6 @@ email: "dayu at udel dot edu"
 highlight_name: false
 ---
 
-Dayu Yang is a 2nd-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
+Dylan Yang is a 2nd-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
