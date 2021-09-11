@@ -1,11 +1,12 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Good_ma_scholars"
+title: "Merger And Acquisition, Good Scholars"
 subtitle: ""
-summary: ""
+summary: "Subscribe Those Channels!"
 authors: []
-tags: []
+tags:
+- Finance
 categories: []
 date: 2021-09-11T18:01:55-04:00
 lastmod: 2021-09-11T18:01:55-04:00
@@ -30,4 +31,7 @@ projects: []
 
 Here I listed some scholars who did significant number of research related to Merger and Acquisition(Takeover) with good publications
 
+- [Gerard Hoberg](http://faculty.marshall.usc.edu/Gerard-Hoberg/)
 - [Tingting Liu](https://www.ivybusiness.iastate.edu/directory/ttliu/)
+- [Darren Bernard](https://foster.uw.edu/faculty-research/directory/darren-bernard/)
+- [Jarrad Harford](https://foster.uw.edu/faculty-research/directory/jarrad-harford/)
