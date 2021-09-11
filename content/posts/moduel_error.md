@@ -3,7 +3,7 @@
 
 title: "Python Module Import Error"
 subtitle: ""
-summary: "You successfully installed the module but still unable to import it"
+summary: "Sometimes successfully installed the module but still unable to import it"
 authors:
 - Dayu Yang
   

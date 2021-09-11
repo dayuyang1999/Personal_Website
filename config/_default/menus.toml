@@ -9,7 +9,7 @@
   weight = 10
 
 [[main]]
-  name = "Posts"
+  name = "All Posts"
   url = "posts/"
   weight = 20
 
@@ -17,8 +17,6 @@
 
 # existing tags:
 # Python Basics
-# Deep Learning
-# Computer Science Basics
 # 
 
 [[main]]
