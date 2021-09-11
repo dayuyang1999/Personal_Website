@@ -30,6 +30,12 @@ image:
 projects: []
 ---
 
+- [Intro](#intro)
+- [The Function](#the-function)
+- [Examples](#examples)
+  - [1st Example](#1st-example)
+  - [2nd Example](#2nd-example)
+
 # Intro
 
 First, make sure you have logged into WRDS before doing any query:
