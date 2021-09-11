@@ -71,4 +71,4 @@ Dylan Yang is a 2nd-year PhD student at {{< staticref "http://www.dalab.info/tea
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
 
-He is super passionate about Automobile Industry and equipped with comprehensive knowledge ranging from (not limited to) automobile marketing to mechanical details. He's dream is to bring the state-of-the-art quantitivate analysis to automobile marketing management.
+He is super passionate about Automobile Industry and equipped with comprehensive knowledge ranging from (not limited to) automobile marketing to mechanical details. His dream is to bring the state-of-the-art quantitivate analysis to automobile marketing management.
