@@ -4,9 +4,12 @@
 title: "Python Module Import Error"
 subtitle: ""
 summary: "You successfully installed the module but still unable to import it"
-authors: ["Dayu Yang"]
-tags: ["python"]
-categories: ["academic"]
+authors:
+- Dayu Yang
+  
+tags: 
+- Python Basics
+categories: [""]
 date: 2021-09-10T20:56:55-04:00
 lastmod: 2021-09-10T20:56:55-04:00
 featured: false
@@ -16,9 +19,22 @@ draft: false
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: ""
-  focal_point: ""
+  caption: 'The Python Logo: [**Unsplash**](https://bigdata-madesimple.com/wp-content/uploads/2019/01/python.jpg)'
+  focal_point: Smart
+  placement: 2
   preview_only: false
+
+
+# links:
+# - icon: 
+#   icon_pack: fab
+#   name: Follow
+#   url: https://twitter.com/georgecushen
+# url_code: ""
+# url_pdf: ""
+# url_slides: ""
+# url_video: ""
+
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -26,6 +42,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
+
 ---
 
 
