@@ -29,6 +29,10 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+- [Push the Project in local to Git](#push-the-project-in-local-to-git)
+- [Pull existing Project in Git to Local](#pull-existing-project-in-git-to-local)
+- [Make Commit](#make-commit)
+- [Roll Back to Previous Version](#roll-back-to-previous-version)
 
 [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
@@ -54,7 +58,7 @@ Here are how to to do them: (assume you already installed VSCode)
 
 # Pull existing Project in Git to Local
 
-1. Copy the URL of the repo
+1. Copy the URL of the repo you like to edit in local
 1. Open Terminal in Local
    1. `git clone URL`
 
@@ -93,3 +97,4 @@ git reset --hard
 
 ```
 
+End
