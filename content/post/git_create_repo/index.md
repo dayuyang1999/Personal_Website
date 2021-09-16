@@ -78,7 +78,7 @@ Here are how to to do them: (assume you already installed VSCode)
 
 1. find the version number you want to rollback
    1. `git log`
-   2. for example, I found the version I found looks ok is `56e05fced `
+   2. for example, the version I found looks ok is `56e05fced `
 2. roll back
 ```bash
 
