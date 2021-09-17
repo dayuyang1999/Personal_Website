@@ -7,7 +7,7 @@ summary: ""
 authors: 
 - Dylan Yang
 tags:
-- Graph Nerual Network
+- Graph Neural Network
 categories: []
 date: 2021-09-17T12:28:27-04:00
 lastmod: 2021-09-17T12:28:27-04:00
