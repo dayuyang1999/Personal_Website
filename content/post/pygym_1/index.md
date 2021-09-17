@@ -45,6 +45,25 @@ I repeat the important resources mentioned in this note here:
 4. [Jure Leskovec's News](https://cs.stanford.edu/people/jure/)
 
 
+---
+
+- [Graph Learning Basics](#graph-learning-basics)
+  - [Machine Learning Tasks on Graph](#machine-learning-tasks-on-graph)
+  - [General Pipeline of Deep Learning in Graph](#general-pipeline-of-deep-learning-in-graph)
+  - [Graph Neural Net](#graph-neural-net)
+- [Challenges in Graph Learning](#challenges-in-graph-learning)
+  - [Implementation](#implementation)
+  - [Finding the best GNN design](#finding-the-best-gnn-design)
+  - [Customizing a GNN pipeline](#customizing-a-gnn-pipeline)
+- [Intro of GraphGym](#intro-of-graphgym)
+  - [GNN Design Space of GraphGym](#gnn-design-space-of-graphgym)
+  - [Experiment Configuration](#experiment-configuration)
+  - [Launching a Batch of Experiments (for Model/Hyperparam/Data... Comparision)](#launching-a-batch-of-experiments-for-modelhyperparamdata-comparision)
+    - [Auto Summary](#auto-summary)
+  - [Register Customized Module](#register-customized-module)
+- [GraphGym in Research](#graphgym-in-research)
+- [Future and History](#future-and-history)
+
 
 ---
 
