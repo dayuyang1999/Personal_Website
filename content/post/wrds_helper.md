@@ -46,7 +46,8 @@ import wrds
 import pandas as pd
 
 # connect to WRDS
-db = wrds.Connection(wrds_username = 'your_username')
+db = wrds.Connection()
+db = wrds.Connection(wrds_username='dayuyang1999')
 
 ```
 
