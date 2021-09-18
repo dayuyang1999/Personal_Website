@@ -60,6 +60,7 @@ Property:
 2. whenever an event occurs, the intensity increases by the value of the event's mark;
 3. if there are no events between time $s$ and time $s+t$ then $\lambda\left(s+t \mid \mathcal{H}_{s+t}\right)=\lambda_{0}(s+t)+\left(\lambda\left(s \mid \mathcal{H}_{s}\right)-\lambda_{0}(s)\right) e^{-\delta t}$
 
+---
 Derivitive of 3:
 $$
 \begin{array}{l}
@@ -69,5 +70,42 @@ $$
 $$
 
 $$N(t+s)=N(s) \quad$ (No event happen in (t+s,s))$$
+
+---
+
+According to Property 2, the intensity increases each time an event occurs, the Hawkes process is said to be a *self-exciting* process.
+
+
+
+
+# General Definition of Self-Exciting Process
+
+recall the general definition of `intensity function`:
+
+$$
+\lambda\left(t \mid \mathcal{H}\_{t}\right)=\lim \_{h \downarrow 0} \mathbb{E}\left[\frac{N(t+h)-N(t)}{h} \mid \mathcal{H}\_{t}\right]
+$$
+- This is saying: the `intensity function` should indicate : "the number of event happened in a infinite-short period of time."
+
+For a `Self-Exciting Process`(Hawkes Process is a special `Self-Exciting Process`), the `intensity function` is defined as:
+
+$$
+\lambda\left(t \mid \mathcal{H}\_{t}\right)=\lambda\_{0}(t)+\int\_{0}^{t} \nu(t-s) \mathrm{d} \mathrm{N}(\mathrm{s})
+$$
+- $\lambda_0$ is a deterministic-based function
+- $v$ is a `kernel`, which represent the **positive** influence of the past events on the current value of the intensity process.
+
+## Hawkes Process from Self-Exciting Process
+
+A Hawkes process is a self-exciting process with **exponential kernel**.
+
+A Hawkes process is a self–exciting process with exponential kernel: $\nu(t)= Y\_{j} e^{-\delta_{j} t}$
+
+So that the intensity becomes:
+
+$$
+\lambda\left(t \mid \mathcal{H}\_{t}\right)=\lambda\_{0}+\int\_{0}^{t} Y e^{-\delta(t-s)} \mathrm{d} \mathrm{N}(\mathrm{s})
+$$
+
 
 
