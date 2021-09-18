@@ -1,16 +1,16 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "GNN Resources List"
-subtitle: "Frequently Check the updates on those Webs"
+title: "Linux Commands: File Management"
+subtitle: "Do not use Windows until the world is end"
 summary: ""
 authors: 
 - Dylan Yang
-tags: 
-- Graph Neural Network
+tags:
+- Linux
 categories: []
-date: 2021-09-17T12:51:04-04:00
-lastmod: 2021-09-17T12:51:04-04:00
+date: 2021-09-17T13:47:18-04:00
+lastmod: 2021-09-17T13:47:18-04:00
 featured: false
 draft: false
 
@@ -30,9 +30,19 @@ image:
 projects: []
 ---
 
-1. [PyG](https://pytorch-geometric.readthedocs.io/en/latest/)
-1. [GraphGym](https://snap.stanford.edu/gnn-design/), a design space for GNN
-1. Emmerging stars in GNN research, [Jiaxuan You](https://cs.stanford.edu/people/jiaxuan/) and [Rex Ying](https://cs.stanford.edu/people/rexy/index.html)
-1. [Jure Leskovec related GNN resources](http://snap.stanford.edu/index.html)
-   1. Some Content on this web is a little old.
-2. [Jure Leskovec's News](https://cs.stanford.edu/people/jure/)
+
+
+# Delete File or Directory
+
+```bash
+# remove file 
+rm filename
+# multiple
+rm filename1 filename2 filename3
+# remove write-protected file with -f: force
+rm -f filenma
+# remove directory (-r means recursive;)
+rm -r dirname
+# remove multiple
+rm -r dirname1 dirname2 dirname3
+```

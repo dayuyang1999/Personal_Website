@@ -237,7 +237,7 @@ Goal: Use GraphGym to validate a newly proposed GNN layer (`ID-GNN`)
   - 20 node/edge/graph level tasks 
   -  3 random seeds 
   -  2 GNN layers (ID-GNN vs. GCN) 
-    - $=480$ experiments
+    - =480 experiments
 
 The GraphGym implementation:
 ![](https://cdn.mathpix.com/snip/images/oJP_s-TQXdM2qWGH3zf2pDeUSitTGLP_ABWFL1fU5eE.original.fullsize.png)
