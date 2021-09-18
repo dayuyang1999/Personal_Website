@@ -47,25 +47,27 @@ Suppose we have a counting process whose `intensity function` at time t depends 
 
 For each event, there is a base intensity function $\lambda_{0}(t)>0$, called `mark`.(`mark` is independent of any previous event).
 
-So, $Y_{i}$ being the mark of event $i$, for $i=1, \ldots, N(t)$, we have CIF as: $\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}$.
+So, $Y_{i}$ being the mark of event $i$, for $i=1, \ldots, N(t)$, we have CIF as: 
 
-
-$$\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}$$
-
+$$\lambda\left(t \mid \mathcal{H}\_{t}\right)=\lambda\_{0}(t)+\sum\_{i=0}^{N(t)} Y\_{i} e^{-\delta\left(t-T\_{i}\right)}$$
 
 - previous events' mark must decrese over time at an exponential rate $\delta$
 
-$$\lambda\left(t \mid \mathcal{H}\_{t}\right)=\lambda\_{0}(t)+\sum\_{i}^{N(t)} Y\_{i} e^{-\delta\left(t-T\_{i}\right)}$$
-
-
 This kind of counting process (having a random intensity function) is `Hawkes Process`.
 
+Property:
+1. $\lambda\left(0 \mid \mathcal{H}\_{0}\right)=\lambda\_{0}(0)$
+2. whenever an event occurs, the intensity increases by the value of the event's mark;
+3. if there are no events between time $s$ and time $s+t$ then $\lambda\left(s+t \mid \mathcal{H}_{s+t}\right)=\lambda_{0}(s+t)+\left(\lambda\left(s \mid \mathcal{H}_{s}\right)-\lambda_{0}(s)\right) e^{-\delta t}$
 
-$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
+Derivitive of 3:
+$$
+\begin{array}{l}
+\lambda\left(s+t \mid H\_{s+k}\right)=\lambda\_{0}(s+t)+\sum\_{i=1}^{N(t+s)} Y\_{i} e^{-\delta\left(t-T\_{i}\right)} \\
+\lambda\left(s \mid H\_{s}\right)=\lambda\_{0}(s)+\sum\_{i=1}^{N(s)} Y\_{i e}^{-\delta\left(t-T\_{i}\right)}
+\end{array}
+$$
 
-example s
-$$f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} & \text{if }k=1, \\\\
-1-p_{0}^{*} & \text{if }k=0.\end{cases}$$
+$$N(t+s)=N(s) \quad$ (No event happen in (t+s,s))$$
+
+
