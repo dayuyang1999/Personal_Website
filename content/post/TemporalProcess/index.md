@@ -58,18 +58,19 @@ This kind of counting process (having a random intensity function) is `Hawkes Pr
 Property:
 1. $\lambda\left(0 \mid \mathcal{H}\_{0}\right)=\lambda\_{0}(0)$
 2. whenever an event occurs, the intensity increases by the value of the event's mark;
-3. if there are no events between time $s$ and time $s+t$ then $\lambda\left(s+t \mid \mathcal{H}_{s+t}\right)=\lambda_{0}(s+t)+\left(\lambda\left(s \mid \mathcal{H}_{s}\right)-\lambda_{0}(s)\right) e^{-\delta t}$
+3. if there are no events between time $s$ and time $s+t$ then:
+    $$\lambda\left(s+t \mid \mathcal{H}\_{s+t}\right)=\lambda\_{0}(s+t)+\left(\lambda\left(s \mid \mathcal{H}\_{s}\right)-\lambda\_{0}(s)\right) e^{-\delta t}$$
 
 ---
 Derivitive of 3:
 $$
 \begin{array}{l}
-\lambda\left(s+t \mid H\_{s+k}\right)=\lambda\_{0}(s+t)+\sum\_{i=1}^{N(t+s)} Y\_{i} e^{-\delta\left(t-T\_{i}\right)} \\
+\lambda\left(s+t \mid H\_{s+k}\right)=\lambda\_{0}(s+t)+\sum\_{i=1}^{N(t+s)} Y\_{i} e^{-\delta\left(t-T\_{i}\right)} \\\\
 \lambda\left(s \mid H\_{s}\right)=\lambda\_{0}(s)+\sum\_{i=1}^{N(s)} Y\_{i e}^{-\delta\left(t-T\_{i}\right)}
 \end{array}
 $$
 
-$$N(t+s)=N(s) \quad$ (No event happen in (t+s,s))$$
+$$N(t+s)=N(s) \;\;\text{Since no event happen in (t+s,s)}$$
 
 ---
 
@@ -107,5 +108,5 @@ $$
 \lambda\left(t \mid \mathcal{H}\_{t}\right)=\lambda\_{0}+\int\_{0}^{t} Y e^{-\delta(t-s)} \mathrm{d} \mathrm{N}(\mathrm{s})
 $$
 
-
+![](https://cdn.mathpix.com/snip/images/a-6jhkkHE72Eja73igiNYg35tuBwxK3iyZf-gcDBJkQ.original.fullsize.png)
 
