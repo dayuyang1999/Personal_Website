@@ -41,7 +41,7 @@ The key characteristic:
 
 # Definition of Hawkes Process
 
-Suppose we have a counting process whose `intensity function` at time t depends on 2 part of random inputs. (Note: For Possion Process, intensity function is a contant at time t;)
+Suppose we have a counting process whose `intensity function` at time t depends on 2 part of random inputs. (Note: For Possion Process, intensity function is a contant at time t)
 - now (1 term)
 - history (not just 1 term)
 
@@ -49,16 +49,20 @@ For each event, there is a base intensity function $\lambda_{0}(t)>0$, called `m
 
 So, $Y_{i}$ being the mark of event $i$, for $i=1, \ldots, N(t)$, we have CIF as:
 
-$$\lambda\left(t \mid \mathcal{H}\\_{t}\right)=\lambda\\_{0}(t)+\sum\\_{i=1}^{N(t)} Y\\_{i} e^{-\delta\left(t-T\\_{i}\right)}$$
-- previous events' mark must decrese over time at an exponential rate $\sigma$
 
-Following the definition of counting process:
 
-$$\mathbb{P}\left(N(t+h)-N(t)=1 \mid \mathcal{H}\\_{t}\right)=\lambda\left(t \mid \mathcal{H}\\_{t}\right) h+o(h)$$
-$$\mathbb{P}\left(N(t+h)-N(t) \geq 2 \mid \mathcal{H}\\_{t}\right)=o(h)$$
+- previous events' mark must decrese over time at an exponential rate $\delta$
+
 
 
 This kind of counting process (having a random intensity function) is `Hawkes Process`.
 
 
+$$\gamma_{n} = \frac{ 
+\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
+\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
+{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
 
+example 
+$$f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} & \text{if }k=1, \\\\
+1-p_{0}^{*} & \text{if }k=0.\end{cases}$$
