@@ -55,7 +55,9 @@ $$\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_
 
 - previous events' mark must decrese over time at an exponential rate $\delta$
 
-$$\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}$$
+$$
+\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}
+$$
 
 
 This kind of counting process (having a random intensity function) is `Hawkes Process`.
