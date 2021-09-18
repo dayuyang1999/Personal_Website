@@ -4,8 +4,10 @@
 title: "Temporal Dynamic Graph: Dyrep"
 subtitle: ""
 summary: ""
-authors: []
-tags: []
+authors: 
+-Dylan Yang
+tags: 
+- Graph Neural Network
 categories: []
 date: 2021-09-17T20:24:36-04:00
 lastmod: 2021-09-17T20:24:36-04:00
@@ -34,3 +36,8 @@ projects: []
 Key Innovation?
 
 Perform well in What Kind of Task?
+
+
+# Prerequisite
+
+To fully understand how Dyrep works, you should know what is [Temporal Point Process]() at first.
