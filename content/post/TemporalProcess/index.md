@@ -49,10 +49,11 @@ For each event, there is a base intensity function $\lambda_{0}(t)>0$, called `m
 
 So, $Y_{i}$ being the mark of event $i$, for $i=1, \ldots, N(t)$, we have CIF as:
 
-
+$\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}$
 
 - previous events' mark must decrese over time at an exponential rate $\delta$
 
+$$\lambda\left(t \mid \mathcal{H}_{t}\right)=\lambda_{0}(t)+\sum_{i=1}^{N(t)} Y_{i} e^{-\delta\left(t-T_{i}\right)}$$
 
 
 This kind of counting process (having a random intensity function) is `Hawkes Process`.
