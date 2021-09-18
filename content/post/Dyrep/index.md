@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Temporal Dynamic Graph: Dyrep"
-subtitle: ""
+subtitle: "Temporal Process, 2-scale of interaction."
 summary: ""
 authors: 
 -Dylan Yang
