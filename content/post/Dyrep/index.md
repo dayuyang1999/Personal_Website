@@ -5,7 +5,7 @@ title: "Temporal Dynamic Graph: Dyrep"
 subtitle: "Temporal Process, 2-scale of interaction."
 summary: ""
 authors: 
--Dylan Yang
+- Dylan Yang
 tags: 
 - Graph Neural Network
 categories: []

@@ -4,8 +4,10 @@
 title: "Temporal Point Process: Hawkes Process"
 subtitle: ""
 summary: ""
-authors: []
-tags: []
+authors: 
+- Dylan Yang
+tags: 
+- Statistics
 categories: []
 date: 2021-09-17T20:51:00-04:00
 lastmod: 2021-09-17T20:51:00-04:00

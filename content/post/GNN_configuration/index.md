@@ -5,9 +5,9 @@ title: "GNN Environment Configuration"
 subtitle: "Should be careful when doing Configuration. Different versions of Compiliers do not play nice with each other..."
 summary: ""
 authors: 
--Dylan Yang
+- Dylan Yang
 tags: 
-- Linux
+- Graph Neural Network
 categories: []
 date: 2021-09-17T14:20:47-04:00
 lastmod: 2021-09-17T14:20:47-04:00
