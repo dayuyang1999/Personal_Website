@@ -137,7 +137,7 @@ We could still remove the late term $logS(t_k)$
 This is equavalent to:
 
 
-$$S(t)=\exp \left\{-\int\_{0}^{t} \lambda(x) d x\right\}$$
+$$S(t) = \exp \left \{ -\int\_{0}^{t} \lambda(x) dx \right\}$$
 
 - the integral term is called `the cumulative hazard` (or cumulative risk):
   - $$\Lambda(t)=\int\_{0}^{t} \lambda(x) dx$$
