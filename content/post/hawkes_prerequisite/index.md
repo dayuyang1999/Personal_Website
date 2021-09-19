@@ -138,6 +138,7 @@ This is equavalent to:
 
 
 $$S(t)=\exp \left\{-\int\_{0}^{t} \lambda(x) d x\right\}$$
+
 - the integral term is called `the cumulative hazard` (or cumulative risk):
   - $$\Lambda(t)=\int\_{0}^{t} \lambda(x) dx$$
     - You may think of $Λ(t)$ as the sum of the risks you face going from duration 0 to t.
@@ -172,13 +173,13 @@ the former could be write as:
 $$
 \begin{aligned}
 \int u f(u) d u &=-\int u d S(u) \\
-&=-\left.\left(u s(u)-\int s(u) d n\right)\right|_{0} ^{\infty} \\
-&=\int_{0}^{\infty} S(u) d u
+&=-\left.\left(u s(u)-\int s(u) d n\right)\right|\_{0} ^{\infty} \\
+&=\int\_{0}^{\infty} S(u) d u
 \end{aligned}
 $$
 
 <br><br>
 <br><br>
 
-The `harzard function` here is the `Conditional Intensity Function` we talk later.
+The `harzard function` here is the `Conditional Intensity Function` we gonna talk later.
 
