@@ -108,7 +108,7 @@ $$L=\prod_{i=1}^{k} f^{*}\left(t_{i}\right)=\prod_{i=1}^{k} \lambda^{*}\left(t_{
 
 For further analysis logize the likelihood function:
 
-$$\begin{aligned} L &=\prod_{i=1}^{k}\left[\lambda\left(t_{i}\right) \exp \left(-\int_{t_{i-1}}^{t_{i}} \lambda(u) d u\right)\right] \\ \ln L &=\sum_{i=1}^{k}\left[\ln (\lambda(t i))-\int_{t_{i-1}}^{t_{i}} \lambda(n) d u\right] \\ &=\left[\sum_{i=1}^{k} \ln \left(\lambda\left(\tau_{i}\right)\right)\right]-\left[\int_{0}^{t_{k}} \lambda(v) d u\right] \end{aligned}$$
+$$\begin{aligned} L &=\prod_{i=1}^{k}\left[\lambda\left(t_{i}\right) \exp \left(-\int_{t_{i-1}}^{t_{i}} \lambda(u) d u\right)\right] \\\\ \ln L &=\sum_{i=1}^{k}\left[\ln (\lambda(t i))-\int_{t_{i-1}}^{t_{i}} \lambda(n) d u\right] \\\\ &=\left[\sum_{i=1}^{k} \ln \left(\lambda\left(\tau_{i}\right)\right)\right]-\left[\int_{0}^{t_{k}} \lambda(v) d u\right] \end{aligned}$$
 
 Notice that the last term of the log likelihood function $ln\;L$ is the `cumulative hazard` we introduced in [my previous post](https://imagoodboy.com/post/hawkes_prerequisite/), which normally be noted as $\Lambda(t)$.
 
