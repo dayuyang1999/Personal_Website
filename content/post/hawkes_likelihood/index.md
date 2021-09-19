@@ -229,7 +229,15 @@ Although the likelihood function of Hawkes Process is tractable, the first term 
 
 Fortunately the similar structure of the inner sumation term $\sum_{j=1}^{\imath-1} \mathrm{e}^{-\beta\left(t_{i}-t_{j}\right)}$ allows the likelihood function to be computed with $O(k)$ complexity.
 
-Refer to:
+For $i \in\{2, \ldots, k\}$, let $A(i)=\sum_{j=1}^{i-1} \mathrm{e}^{-\beta\left(t_{i}-t_{j}\right)}$, so that:
+
+$$A(i)=\mathrm{e}^{-\beta t_{i}+\beta t_{i-1}} \sum_{j=1}^{i-1} \mathrm{e}^{-\beta t_{i-1}+\beta t_{j}} \\\\ =\mathrm{e}^{-\beta\left(t_{i}-t_{i-1}\right)}\left(1+\sum_{j=1}^{i-2} \mathrm{e}^{-\beta\left(t_{i-1}-t_{j}\right)}\right) \\\\ =\mathrm{e}^{-\beta\left(t_{i}-t_{i-1}\right)}(1+A(i-1))$$
+
+With the added base case of $A(1)=0, l$ can be rewritten as:
+
+$$l=\sum_{i=1}^{k} \log (\lambda \mid \alpha A(i))-\lambda t_{k} \mid \frac{\alpha}{\beta} \sum_{i=1}^{k}\left[\mathrm{c}^{-\beta\left(t_{k}-t_{i}\right)}-1\right]$$
+
+For the detail of the efficient Algorithm, refer to:
 - Y. Ogata, Annals of the Institute of Statistical Mathematics 30(1), 243 (1978)
 - S. Crowley. Point process models for multivariate high-frequency irregularly spaced data. http://vixra.org/pdf/1211.0094v6.pdf (2013). Working paper, retrieved on 10 Feb 2015
 
