@@ -204,19 +204,29 @@ plugins_js  = []
 ## Comments
 ############################
 [comments]
-  # Comment provider:
+  # Comment provider: 
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 1
+  provider = "giscus"
+
 
   # Which page types are commentable?
   commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
 
   # Configuration of Disqus.
-  [comments.disqus]
-    shortname = ""  # Paste the shortname from your Disqus dashboard.
-    show_count = true  # Show comment count in page header? (true/false)
+  [comments.giscus]
+    repo="dayuyang1999/comments"
+    repo_id="MDEwOlJlcG9zaXRvcnk0MDgyNjQwNDg="
+    category_id="DIC_kwDOGFWdcM4B_Hf8"
+    category = "Announcements"
+    mapping="pathname"
+    label = "comment"
+    theme = "light"
+    reactions_enabled="0"
+    emit_metadata="0"
+    crossorigin="anonymous"
+
 
   # Configuration of Commento.
   [comments.commento]
