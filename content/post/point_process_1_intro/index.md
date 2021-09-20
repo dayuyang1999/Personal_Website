@@ -30,6 +30,15 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 
+
+- [Survival Function](#survival-function)
+- [The Hazard Function](#the-hazard-function)
+- [The Relationship bewteen notations](#the-relationship-bewteen-notations)
+- [If we have multiple type of event K](#if-we-have-multiple-type-of-event-k)
+- [Some Other Useage](#some-other-useage)
+  - [Expectation of Life](#expectation-of-life)
+
+
 ---
 
 To comfortably introduce Hawkes Process, first we have to understand some idea in Survival Analysis in Statistics.
@@ -231,13 +240,22 @@ If we observe the sequence of differnet types of events: $\left[\left(k_{1}, t_{
 For modeling such events sequence, the likelihood function:
 
 
-$$\begin{aligned} \mathcal{L} &=\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\} \\\\ &=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\} \end{aligned}$$
+$$ \mathcal{L} =\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\}$$
+
+$$ ...=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\}$$
 
 
 Logize:
 
-$$\begin{aligned} \ell \stackrel{\text { def }}{=} \log \mathcal{L} \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\sum_{i: t_{i} \leq T}\left(\Lambda\left(t_{i}\right)-\Lambda\left(t_{i-1}\right)\right) \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\Lambda(T) \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \lambda(t) d t \\\\
-&=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \sum_k \lambda_k(t) d t
+$$\ell \stackrel{\text { def }}{=} \log \mathcal{L}$$
+
+$$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\sum_{i: t_{i} \leq T}\left(\Lambda\left(t_{i}\right)-\Lambda\left(t_{i-1}\right)\right)$$
+
+$$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\Lambda(T)$$
+
+$$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \lambda(t) dt$$
+
+$$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \sum_k \lambda_k(t) d t$$
 
 
 \end{aligned}$$
@@ -267,8 +285,8 @@ the former could be write as:
 
 $$
 \begin{aligned}
-\int u f(u) d u &=-\int u d S(u) \\
-&=-\left.\left(u s(u)-\int s(u) d n\right)\right|\_{0} ^{\infty} \\
+\int u f(u) d u &=-\int u d S(u) \\\\
+&=-\left.\left(u s(u)-\int s(u) d n\right)\right|\_{0} ^{\infty} \\\\
 &=\int\_{0}^{\infty} S(u) d u
 \end{aligned}
 $$
