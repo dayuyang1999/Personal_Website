@@ -216,15 +216,15 @@ plugins_js  = []
 
   # Configuration of Disqus.
   [comments.giscus]
-    repo="dayuyang1999/comments"
-    repo_id="MDEwOlJlcG9zaXRvcnk0MDgyNjQwNDg="
-    category_id="DIC_kwDOGFWdcM4B_Hf8"
+    repo = "dayuyang1999/comments"
+    repo_id ="MDEwOlJlcG9zaXRvcnk0MDgyNjQwNDg="
+    category_id ="DIC_kwDOGFWdcM4B_Hf8"
     category = "Announcements"
-    mapping="pathname"
+    mapping ="pathname"
     label = "comment"
     theme = "light"
-    reactions_enabled="0"
-    emit_metadata="0"
+    reactions_enabled ="0"
+    emit_metadata ="0"
     crossorigin="anonymous"
 
 

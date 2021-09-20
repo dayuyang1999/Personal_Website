@@ -1,12 +1,14 @@
+{{ if site.Params.comments.giscus }}
 <script src="https://giscus.app/client.js"
-        data-repo="dayuyang1999/comments"
-        data-repo-id="MDEwOlJlcG9zaXRvcnk0MDgyNjQwNDg="
-        data-category-id="DIC_kwDOGFWdcM4B_Hf8"
-        data-mapping="pathname"
-        data-reactions-enabled="0"
-        data-emit-metadata="0"
-        data-theme="light"
+        data-repo="{{site.Params.comments.giscus.repo}}"
+        data-repo-id="{{site.Params.comments.giscus.repo_id}}"
+        data-category="{{site.Params.comments.giscus.category}}"
+        data-category-id="{{site.Params.comments.giscus.category_id}}"
+        data-mapping="{{site.Params.comments.giscus.mapping}}"
+        data-reactions-enabled="{{site.Params.comments.giscus.reactions_enabled}}"
+        data-theme="{{site.Params.comments.giscus.theme}}"
         crossorigin="anonymous"
         async>
 </script>
 <noscript>Please enable JavaScript to view the comments powered by giscus.</noscript>
+{{ end }}
