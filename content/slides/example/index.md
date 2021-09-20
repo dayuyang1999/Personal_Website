@@ -7,10 +7,10 @@ categories: []
 date: "2019-02-05T00:00:00Z"
 slides:
   # Choose a theme from https://github.com/hakimel/reveal.js#theming
-  theme: black
+  theme: "white"
   # Choose a code highlighting style (if highlighting enabled in `params.toml`)
   #   Light style: github. Dark style: dracula (default).
-  highlight_style: dracula
+  highlight_style: "github"
 ---
 
 # Create slides in Markdown with Wowchemy
@@ -135,11 +135,10 @@ Press the `S` key to view the speaker notes!
 
 Customize the slide style and background
 
-```markdown
+
 {{</* slide background-image="/media/boards.jpg" */>}}
 {{</* slide background-color="#0000FF" */>}}
 {{</* slide class="my-style" */>}}
-```
 
 ---
 
@@ -149,13 +148,13 @@ Let's make headers navy colored.
 
 Create `assets/css/reveal_custom.css` with:
 
-```css
+
 .reveal section h1,
 .reveal section h2,
 .reveal section h3 {
   color: navy;
 }
-```
+
 
 ---
 

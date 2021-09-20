@@ -1,9 +1,9 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process: Hawkes Process 2: Likelihood"
+title: "Temporal Point Process 2: Hawkes Process"
 subtitle: ""
-summary: ""
+summary: "Hawkes Process is a special kind of point process with exponentail decay self-exiciting factor"
 authors: 
 - Dylan Yang
 tags: 
@@ -14,8 +14,6 @@ lastmod: 2021-09-17T20:51:00-04:00
 featured: false
 draft: false
 math: true
-commentable: true
-
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -33,6 +31,102 @@ image:
 projects: []
 
 ---
+
+
+Reference 
+
+- [MathWorld Hawkes Process](https://mathworld.wolfram.com/HawkesProcess.html)
+- [The Original Paper by Alan Hawkes](https://www-jstor-org.ezproxy.lib.utexas.edu/stable/2334319?seq=1#metadata_info_tab_contents)
+- [A paper has relatively clear derivation](https://onlinelibrary.wiley.com/doi/full/10.1002/fut.21644)
+
+---
+
+
+- [Self-exciting Process](#self-exciting-process)
+- [Some note](#some-note)
+- [The Likelihood Function of Hawkes Process](#the-likelihood-function-of-hawkes-process)
+  - [General Likelihood Function for Point Process](#general-likelihood-function-for-point-process)
+  - [Likelihood function for Hawkes Process](#likelihood-function-for-hawkes-process)
+  - [Complexity Analysis](#complexity-analysis)
+
+
+# Self-exciting Process
+
+
+`Self-excited point process` is a special group of point process whose intensity depends on the history of the point process. 
+
+More precisely, the point process is determined by the intensity $\lambda$ through the relations:
+
+$$
+\begin{array}{l}
+\mathbb{P}\left[N_{t+h}-N_{t}=1 \mid \mathcal{F}_{t}\right]=\lambda_{t} h+o(h) \\
+\mathbb{P}\left[N_{t+h}-N_{t}>1 \mid \mathcal{F}_{t}\right]=o(h) \\
+\mathbb{P}\left[N_{t+h}-N_{t}=0 \mid \mathcal{F}_{t}\right]=1-\lambda_{t} h+o(h)
+\end{array}
+$$
+
+- in a short period h, it's only possible to have max 1 event happens(or no event happens)
+  - and the event is called "a jump of counting process $N(t)$"
+- this definition did not give us the exact formulation of $\lambda$
+- from this, we could write a definition of $\lambda$:
+
+$$
+\lambda(t)=\lim \_{h \rightarrow 0} \frac{\mathbb{P}\left[N_{t+h}-N_{t}=1 \mid \mathcal{F}_{t}\right]}{h}
+$$
+
+
+Using  ${t_1, t_2, . . . , t_k}$ to denote the observed sequence of past arrival times of the point process up to time t, the Hawkes conditional intensity is:
+
+$$
+\lambda^{*}(t)=\lambda+\sum_{t_{i}<t} \mu\left(t-t_{i}\right)
+$$
+
+
+
+Then, we need to parameterize $\lambda$.
+
+The structure of $\lambda$ is quite flexible and only required:
+- background intensity $\lambda >0$ 
+- excitation function $\mu \ge 0$  and $\mu(x) =0 (x<0)$
+
+
+Followed by (12) in (Hawkes 1971), in that case $\mu(t)=\alpha \mathrm{e}^{-\beta t}$, which is parameterised by constants $\alpha, \beta>0$:
+
+$$\lambda^{*}(t)=\lambda+\int\_{-\infty}^{t} \alpha \mathrm{e}^{-\beta(t-s)} \mathrm{d} N(s)=\lambda+\sum\_{t\_{i}<t} \alpha \mathrm{e}^{-\beta\left(t-t\_{i}\right)}$$
+
+
+
+---
+
+# Some note
+
+**Why Exponential Decay?**
+
+The analytic solution of likelihood function could easily be obtained when $\mu$ decays exponentially.
+
+**relation with the survival analysis case**
+
+since hawkes process is only a special case of point process describe in [the previous post](https://imagoodboy.com/post/hawkes_prerequisite/), so everything described there still hold for hawkes process.
+
+
+
+<br><br>
+<br><br>
+
+**An example of simulation of Hawkes Process**
+
+![](https://cdn.mathpix.com/snip/images/qlRIykYwX0V0sEsgEaZ_TAC_ktqGj4WKjHc0T4NvpOM.original.fullsize.png)
+
+
+<br/><br/>
+<br/><br/>
+
+
+
+
+
+# The Likelihood Function of Hawkes Process
+
 
 Recall that Hawkes Process is good in modeling contagion risk or clustering arrival of events in finance, insurance, economics and many other fields.
 
@@ -56,7 +150,6 @@ the flexibility mainly came from 3 part:
 <br><br>
 
 
-# Likelihood Function 
 
 to estimate $(\alpha, \beta, \lambda))$, Maximum Likelihood Estimation is a straghtforward approach when the likelihood function is tractable.
 
@@ -80,7 +173,24 @@ $$
 | see Proposition 7.2.III of Daley, Daryl J., and David Vere-Jones. An introduction to the theory of point processes: volume I: elementary theory and methods. Springer New York, 2003.
 
 ---
+<br><br>
 
+**Some thought about theorem 1:**
+
+If we use the logized verison, and make the summation of the 2nd term at first:
+
+$$\begin{aligned}\ln L &=\sum_{i=1}^{k}\left[\ln (\lambda(t i))-\int_{t_{i-1}}^{t_{i}} \lambda(n) d u\right] \\\\ &=\left[\sum_{i=1}^{k} \ln \left(\lambda\left(\tau_{i}\right)\right)\right]-\left[\int_{0}^{t_{k}} \lambda(v) d u\right] \end{aligned}$$
+
+the last term called `cumulative risk` $\Lambda$ is what we have already learned.
+
+Intuitively, $-\Lambda$ term (which is $\le 0$ ) sums the log-proba
+
+
+
+
+
+
+<br><br>
 **Proof of Theorem 1:**
 
 Therome 1 is actually not hard to prove.
@@ -111,6 +221,16 @@ For further analysis logize the likelihood function:
 $$\begin{aligned} L &=\prod_{i=1}^{k}\left[\lambda\left(t_{i}\right) \exp \left(-\int_{t_{i-1}}^{t_{i}} \lambda(u) d u\right)\right] \\\\ \ln L &=\sum_{i=1}^{k}\left[\ln (\lambda(t i))-\int_{t_{i-1}}^{t_{i}} \lambda(n) d u\right] \\\\ &=\left[\sum_{i=1}^{k} \ln \left(\lambda\left(\tau_{i}\right)\right)\right]-\left[\int_{0}^{t_{k}} \lambda(v) d u\right] \end{aligned}$$
 
 Notice that the last term of the log likelihood function $ln\;L$ is the `cumulative hazard` we introduced in [my previous post](https://imagoodboy.com/post/hawkes_prerequisite/), which normally be noted as $\Lambda(t)$.
+
+
+
+
+
+
+
+
+
+
 
 
 <br><br>
@@ -240,6 +360,9 @@ $$l=\sum_{i=1}^{k} \log (\lambda \mid \alpha A(i))-\lambda t_{k} \mid \frac{\alp
 For the detail of the efficient Algorithm, refer to:
 - Y. Ogata, Annals of the Institute of Statistical Mathematics 30(1), 243 (1978)
 - S. Crowley. Point process models for multivariate high-frequency irregularly spaced data. http://vixra.org/pdf/1211.0094v6.pdf (2013). Working paper, retrieved on 10 Feb 2015
+
+
+
 
 
 End

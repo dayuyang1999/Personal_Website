@@ -218,8 +218,8 @@ plugins_js  = []
   [comments.giscus]
     repo = "dayuyang1999/comments"
     repo_id = "MDEwOlJlcG9zaXRvcnk0MDgyNjQwNDg="
-    category_id = "DIC_kwDOGFWdcM4B_Hf8"
     category = "Announcements"
+    category_id = "DIC_kwDOGFWdcM4B_Hf8"
     mapping = "pathname"
     label = "comment"
     theme = "light"
@@ -229,7 +229,7 @@ plugins_js  = []
   # Configuration of Commento.
   [comments.commento]
     # If self-hosting Commento, enter its URL here (e.g. "https://commento.?.com"), otherwise leave empty.
-    url = ""
+    # url = ""
 
 ############################
 ## Search

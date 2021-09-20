@@ -1,9 +1,9 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process: Hawkes Process 0: Prerequisite"
+title: "Temporal Point Process 1: introduction"
 subtitle: ""
-summary: ""
+summary: "Point Process is widely used in modeling sequence of events that: 1. timing is important 2.rare to happen"
 authors: 
 - Dylan Yang
 tags: 
@@ -59,11 +59,18 @@ $$
 \lambda(t)=\lim \_{d t \rightarrow 0} \frac{\operatorname{Pr}\{t \leq T<t+d t \mid T \geq t\}}{d t}
 $$
 
-- a rate of event occurrence per unit of time
-  - The numerator of this expression is the conditional probability that the event will occur in the interval $[t,t+dt)$ given that it has not occurred before
-  -  the denominator is the width of the interval
-- Taking the limit as the width of the interval goes down to zero, we obtain an **instantaneous** rate of occurrence.
-- The overall term is not a probability, since the it is not actually a probability because it can exceed 1.
+Here is a equavalent definition:
+
+$$
+\lambda(t)=\lim \_{d t \rightarrow 0} \frac{\operatorname{Pr}{(N(t+dt)- N(t)=1)}}{d t}
+$$
+
+- $\lambda$ could be roughly seen as the *1st derivitive* of the probability
+  - so itself is not a probability
+  - a rate of event occurrence per unit of time
+
+
+
 
 
 
@@ -152,8 +159,96 @@ F^{*}(t)=1-\exp \left(-\int_{t_{k}}^{t} \lambda^{*}(u) \mathrm{d} u\right), \qua
 $$
 
 
+<br><br>
 
-# Some Useage 
+# The Relationship bewteen notations
+let's be clear to the relationship between the following elements:
+
+
+
+Define $N(t)=\left|\left\{h: t_{h} \leq t\right\}\right|$ to be the count of events (of any type) preceding time $t$
+
+
+
+given the past history $\mathcal{H}_{i}$, the number of events in $\left(t_{i-1}, t\right]$ is denoted as $\Delta N\left(t_{i-1}, t\right) \stackrel{\text { def }}{=}N(t)-N\left(t_{i-1}\right)$
+
+- probability $Pr$
+  - $P(\Delta N(t, t+dt)=0)$
+  - $P(\Delta N(t, t+dt)=1)$
+  - $P(\Delta N(T_{i-1}, T_i)=0)$
+  - $P(\Delta N(T_{i-1}, T_i)=1)$
+  - $P(T_i > t)$ 
+  - $P(T_i < t)$
+  - ...
+- Intensity $\lambda$
+- Cumulative risk $\Lambda$ 
+- pdf $f(t)$
+- cdf $F(t)$
+
+
+
+
+<br><br>
+
+Now we just pass $T_{i-1}$, and know that there's no event happen, we are try to infer if the patient will still be alive until $T_i$
+
+There's not event before $T_i$, or no event in $[T_{i-1}, T_i]$(already know that there's no event happen before $T_{i-1}$):
+
+$$P(\Delta N(T_{i-1}, T_i)=0) = P(T_i > t) = 1 - P(T_i \le t) = 1- F(t) = \exp(-\int_{t_{i-1}}^{t} \lambda(s) ds)$$
+
+$$\exp\left(-\int_{t_{i-1}}^{t} \lambda(s) ds\right) = - \left( \Lambda(t) - \Lambda(t_{i-1}) \right)$$
+
+
+There is some events before t, or the event happen in $[T_{i-1}, T_i]$ (already know that there's no event happen before $T_{i-1}$):
+
+$$P(\Delta N(T_{i-1}, T_i) >0) = P(T_i \le t) = 1 - P(T_i > t) = F(t) =1 -  \exp\left(-\int_{t_{i-1}}^{t} \lambda(s) ds\right)$$
+
+
+<br><br>
+
+# If we have multiple type of event K
+
+If multiple types of event are implemented, there are two stage of the model:
+
+1. decide the time
+2. decide the type
+
+
+Using a single point process to model the "timing": $\lambda(t)$
+Then choose the type by:
+
+$$P\left(K_{i}=k_{i} \mid t_{i}\right)=\frac{\lambda_{k_{i}}\left(t_{i}\right)}{\lambda\left(t_{i}\right)}$$
+
+So we have the relationship:
+
+$$\sum_k \lambda_k(t) = \lambda(t)$$
+
+---
+
+If we observe the sequence of differnet types of events: $\left[\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{T}, t_{T}\right)\right]$
+- each event was decided by 1.timing 2. which type
+
+For modeling such events sequence, the likelihood function:
+
+
+$$\begin{aligned} \mathcal{L} &=\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\} \\\\ &=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\} \end{aligned}$$
+
+
+Logize:
+
+$$\begin{aligned} \ell \stackrel{\text { def }}{=} \log \mathcal{L} \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\sum_{i: t_{i} \leq T}\left(\Lambda\left(t_{i}\right)-\Lambda\left(t_{i-1}\right)\right) \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\Lambda(T) \\\\ &=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \lambda(t) d t \\\\
+&=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \sum_k \lambda_k(t) d t
+
+
+\end{aligned}$$
+
+
+
+
+<br><br>
+<br><br>
+
+# Some Other Useage 
 
 ## Expectation of Life
 
@@ -183,3 +278,9 @@ $$
 
 The `harzard function` here is the `Conditional Intensity Function` we gonna talk later.
 
+
+---
+
+reference:
+- [Survival Analysis Lecture Note](https://data.princeton.edu/wws509/notes/c7s1)
+- 
