@@ -180,7 +180,7 @@ Define $N(t) = |h: t_h \le t|$ to be the count of events (of any type) preceding
 
 
 
-given the past history $\mathcal{H}_{i}$, the number of events in $[t_{i-1}, t]$, is denoted as: $\Delta N\left(t_{i-1}, t\right) \stackrel{\text { def }}{=} N(t)-N\left(t_{i-1}\right)$.
+given the past history $H_{i}$, the number of events in $[t_{i-1}, t]$, is denoted as: $\Delta N\left(t_{i-1}, t\right) \stackrel{\text { def }}{=} N(t)-N\left(t_{i-1}\right)$.
 
 - probability $Pr$
   - $P(\Delta N(t, t+dt)=0)$
