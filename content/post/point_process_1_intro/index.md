@@ -176,7 +176,7 @@ let's be clear to the relationship between the following elements:
 
 
 
-Define $N(t)=\left|\left\{h: t_{h} \leq t\right\}\right|$ to be the count of events (of any type) preceding time $t$
+Define $N(t)=|\left\{h: t_{h} \leq t\right\}|$ to be the count of events (of any type) preceding time $t$.
 
 
 
@@ -265,9 +265,10 @@ If we observe the sequence of differnet types of events: $\left[\left(k_{1}, t_{
 For modeling such events sequence, the likelihood function:
 
 
-$$ \mathcal{L} =\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\}$$
+$$\mathcal{L} =\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\}$$
 
-$$ ...=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\}$$
+
+$$...=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\}$$
 
 
 Logize:

@@ -1,8 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 3.1: Parameterize $\\lambda$, Training, Prediction and Evaluation: The Neural Hawkes Process"
-subtitle: ""
+title: "Temporal Point Process 3.1: The Neural Hawkes Process"
+subtitle: "The key is to be clear about: 1. Parameterize $\\lambda$, 2. Training, 3. Prediction and 4. Evaluation: "
 summary: ""
 authors: 
 - Dylan Yang
