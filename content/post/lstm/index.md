@@ -29,6 +29,15 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+- [Main idea](#main-idea)
+- [Step by Step](#step-by-step)
+  - [Forget old memory?](#forget-old-memory)
+  - [prepare new memory](#prepare-new-memory)
+  - [update old memory](#update-old-memory)
+  - [Output](#output)
+- [Some variation](#some-variation)
+  - [Only add new info to where to forge](#only-add-new-info-to-where-to-forge)
+  - [GRU](#gru)
 
 # Main idea
 

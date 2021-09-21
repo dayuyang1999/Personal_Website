@@ -214,7 +214,31 @@ There is some events before t, or the event happen in $[T_{i-1}, T_i]$ (already 
 $$P(\Delta N(T_{i-1}, T_i) >0) = P(T_i \le t) = 1 - P(T_i > t) = F(t) =1 -  \exp\left(-\int_{t_{i-1}}^{t} \lambda(s) ds\right)$$
 
 
+
 <br><br>
+
+Here we could see that the time (**waiting time** $t-t_k$) is a random variable. And the pdf and cdf are given above. 
+
+Let's explore more about the shape of pdf:
+
+---
+
+fix $t-t_k = 1$
+
+if we have $t_k=0$, back to the `survival function` case, let's assume intensity $\lambda$ =1 :
+![](https://cdn.mathpix.com/snip/images/HfoSScNLsJ6cjtjOvw3X_O3bwE6sGtLitzLEtsycvFk.original.fullsize.png)
+- the pdf is just $e^{-x}$,  ($\int a e^{-ax}$ = 1)
+
+if we have intensity $\lambda$ =2 :
+
+![](https://cdn.mathpix.com/snip/images/otl0dRSSXNBZ-ASPb2MO3oupXHzndkIv0iAu889_HiE.original.fullsize.png)
+- decay more intensively (since the $\int$ always =1, and we start higher)
+
+---
+
+
+
+
 
 # If we have multiple type of event K
 
