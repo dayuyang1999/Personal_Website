@@ -176,11 +176,11 @@ let's be clear to the relationship between the following elements:
 
 
 
-Define $N(t)=|\left\{h: t_{h} \leq t\right\}|$ to be the count of events (of any type) preceding time $t$.
+Define $N(t) = |h: t_h \le t|$ to be the count of events (of any type) preceding time $t$.
 
 
 
-given the past history $\mathcal{H}_{i}$, the number of events in $\left(t_{i-1}, t\right]$ is denoted as $\Delta N\left(t_{i-1}, t\right) \stackrel{\text { def }}{=}N(t)-N\left(t_{i-1}\right)$
+given the past history $\mathcal{H}_{i}$, the number of events in $[t_{i-1}, t]$ is denoted as $\Delta N\left(t_{i-1}, t\right) \stackrel{\text { def }}{=}N(t)-N\left(t_{i-1}\right)$.
 
 - probability $Pr$
   - $P(\Delta N(t, t+dt)=0)$
@@ -264,11 +264,7 @@ If we observe the sequence of differnet types of events: $\left[\left(k_{1}, t_{
 
 For modeling such events sequence, the likelihood function:
 
-
-$$\mathcal{L} =\prod_{i: t_{i} \leq T} \mathcal{L}_{i}=\prod_{t_{i} \leq T}\left\{f\left(t_{i}\right) P\left(K_{i}=k_{i} \mid t_{i}\right)\right\}$$
-
-
-$$...=\prod_{i: t_{i} \leq T}\left\{\exp \left(\Lambda\left(t_{i-1}\right)-\Lambda\left(t_{i}\right)\right) \lambda_{k_{i}}\left(t_{i}\right)\right\}$$
+![](https://cdn.mathpix.com/snip/images/LS-oBKz3SEGe1Am63huLa1tGE1NgqSEHnATuk-SD03M.original.fullsize.png)
 
 
 Logize:
@@ -284,7 +280,7 @@ $$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} 
 $$=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\int_{t=0}^{T} \sum_k \lambda_k(t) d t$$
 
 
-\end{aligned}$$
+
 
 
 
