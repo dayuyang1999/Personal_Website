@@ -31,6 +31,22 @@ image:
 projects: []
 ---
 
+- [Problem Description](#problem-description)
+- [Parameterizing $\lambda$: Continus LSTM hidden state](#parameterizing-lambda-continus-lstm-hidden-state)
+- [Training Algorithm](#training-algorithm)
+  - [MLE](#mle)
+    - [The integral](#the-integral)
+    - [Optimize](#optimize)
+- [Prediction](#prediction)
+  - [Time](#time)
+  - [Type](#type)
+- [Simulation](#simulation)
+  - [Thinning Algorithm](#thinning-algorithm)
+  - [$\lambda^*$](#lambda)
+
+<br><br>
+<br><br>
+
 By observing $\left[\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{T}, t_{T}\right)\right]$ sequence as training data, how to train the point process model? How could we predict? How to tell if the prediction is reliable?
 
 For parameterizing step:
@@ -48,7 +64,8 @@ For evaluation:
 - what is the metrics.
 
 
-
+<br><br>
+<br><br>
 
 # Problem Description
 Modeling K types of events, each of which are observed to occur in continuous time.
@@ -58,13 +75,14 @@ observed event streams $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ld
 - $0<t_{1}<t_{2}<\cdots$ are times of occurrence
 
 
-
+<br><br>
+<br><br>
 
 
 # Parameterizing $\lambda$: Continus LSTM hidden state
 
 
-The base idea: apply the `hidden state`, and transform it to $\lamdba_k(t)$
+The base idea: apply the `hidden state`, and transform it to $\lambda_k(t)$
 
 2 issues let the famous [LSTM](https://imagoodboy.com/post/lstm/) does not applicable to the observed data:
 
@@ -111,7 +129,7 @@ $$\ell=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\underbrace
 - front: the sum of log-intensity, for those time that the events happened (should be A large AP)
 - end: the integral of the total intensity over the whole observation window (should be A small AP)
   
-
+<br><br>
 
 ### The integral
 
@@ -120,11 +138,14 @@ Using Monte-Carlo Integration to handle the integral part of the likelihood (it 
 ![](https://cdn.mathpix.com/snip/images/yuq8GwJOMFOesoCspIwYanrcfEAIyHaTBmEdcoBPGmc.original.fullsize.png)
 - the key is to uniformly draw sample from the entire time integral interval.
 
+<br><br>
+
 ### Optimize
 
 using SGD to max likelihood
 
-
+<br><br>
+<br><br>
 
 # Prediction
 
@@ -135,6 +156,9 @@ Given $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{i-1}
 Predict:
 - time
 - type
+
+<br><br>
+
 
 ## Time
 
@@ -150,6 +174,7 @@ to predict a single time, and expect L2 loss to be as low as possible, we should
 $$\hat{t}_{i}=\mathbb{E}\left[t_{i} \mid \mathcal{H}_{i}\right]=\int_{t_{i-1}}^{\infty} t p_{i}(t) d t$$
 - the expectation of $t$
 
+<br><br>
 
 ## Type
 
@@ -163,6 +188,8 @@ $$ argmax_k \frac{\lambda_{k}\left(\hat{t_{i}}\right)}{\lambda\left(\hat{t_{i}}\
 The integral is estimated by Monte Carlo Sampling.
 
 
+<br><br>
+<br><br>
 
 # Simulation
 
@@ -190,6 +217,7 @@ Then we take the event happens eariliest, as $(k_i, t_i)$
 
 ---
 
+<br><br>
 
 ## Thinning Algorithm
 
@@ -225,10 +253,15 @@ Then, formally define the algorithm
 
 ![](https://cdn.mathpix.com/snip/images/kwP_A6jKYVPblY7RDNAPngh4Afxbx8o2TCoDcL8wllc.original.fullsize.png)
 
+<br><br>
 
 ## $\lambda^*$
 
 how do we construct the upper bound $\lambda^{*}$ on $\lambda_{k}^{i}$?
+
+
+
+End
 
 
 
