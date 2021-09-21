@@ -62,9 +62,16 @@ observed event streams $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ld
 
 # Parameterizing $\lambda$: Continus LSTM hidden state
 
-[The LSTM we are familar with]() is the discrete version. However, $\lambda(t)$ is time dependency. 
+2 issues let the famous LSTM does not applicable to the observed data:
 
-to make it continuous, the author make 
+1. The LSTM we are familar with is the discrete version. However, $\lambda(t)$ is time dependency. 
+2. The LSTM has an "input vector"
+3. the observed data has type of event info "K"
+
+So, the author make the following edit to make LSTM applicable:
+
+
+
 
 
 

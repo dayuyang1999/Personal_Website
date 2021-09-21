@@ -30,6 +30,7 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 
+---
 
 - [Survival Function](#survival-function)
 - [The Hazard Function](#the-hazard-function)
@@ -39,7 +40,7 @@ projects: []
   - [Expectation of Life](#expectation-of-life)
 
 
----
+
 
 To comfortably introduce Hawkes Process, first we have to understand some idea in Survival Analysis in Statistics.
 
