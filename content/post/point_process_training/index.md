@@ -1,13 +1,13 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 3: Training"
+title: "Temporal Point Process 3.1: Parameterize $\lambda$, Training, Prediction and Evaluation: The Neural Hawkes Process"
 subtitle: ""
 summary: ""
 authors: 
 - Dylan Yang
 tags: 
-- Statistics
+- Statistics, Recurrent Neural Network
 categories: []
 date: 2021-09-20T11:53:27-04:00
 lastmod: 2021-09-20T11:53:27-04:00
@@ -30,9 +30,52 @@ image:
 projects: []
 ---
 
+By observing $\left[\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{T}, t_{T}\right)\right]$ sequence as training data, how to train the point process model? How could we predict? How to tell if the prediction is reliable?
+
+For parameterizing step:
 
 
-If we observe a sequence of event, $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{i-1}, t_{i-1}\right)$
+For training step, should be clear:
+- what is the parameter to learn
+- what is the likelihood function 
+- the algorithm enables learning
+
+For prediction:
+- what is the algorithm
+
+For evaluation:
+- what is the metrics.
+
+
+
+
+# Problem Description
+Modeling K types of events, each of which are observed to occur in continuous time.
+
+observed event streams $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots$
+- $k_{i} \in\{1,2, \ldots, K\}$ is an event type
+- $0<t_{1}<t_{2}<\cdots$ are times of occurrence
+
+
+
+
+
+# Parameterizing $\lambda$: Continus LSTM hidden state
+
+[The LSTM we are familar with]() is the discrete version. However, $\lambda(t)$ is time dependency. 
+
+to make it continuous, the author make 
+
+
+
+
+
+
+
+
+
+
+
 
 For a general point process, likelihood function:
 

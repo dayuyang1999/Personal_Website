@@ -37,7 +37,7 @@ You have to specify which verison of `something` you intend to install.
 
 # From 0 to 100
 
-Here is a stable version of Graph Research Environment provided by [Xiaohang Zhao](https://www.linkedin.com/in/xiaohangzhao/).
+Here is a stable version of Graph Research Environment provided by [Dr. Xiaohang Zhao](https://www.linkedin.com/in/xiaohangzhao/).
 
 ```bash
 conda create --name GNN python=3.8.10
