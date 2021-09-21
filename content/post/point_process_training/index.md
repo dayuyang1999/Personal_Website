@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 3.1: Parameterize $\lambda$, Training, Prediction and Evaluation: The Neural Hawkes Process"
+title: "Temporal Point Process 3.1: Parameterize $\\lambda$, Training, Prediction and Evaluation: The Neural Hawkes Process"
 subtitle: ""
 summary: ""
 authors: 
@@ -69,6 +69,7 @@ observed event streams $\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ld
 3. the observed data has type of event info "K"
 
 So, the author make the following edit to make LSTM applicable:
+
 
 
 
