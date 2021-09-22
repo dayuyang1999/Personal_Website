@@ -234,17 +234,46 @@ sequences while avoiding gradient related issues.
 
 ## Link prediction
 
+prediction task: given node v, given time t, given event type k, which is the most likely node u.
 
+The density function is 
+
+$$
+f_{k}^{u, v}(t)=\lambda_{k}^{u, v}(t) \cdot \exp \left(\int_{\bar{t}}^{t} \lambda(s) d s\right)
+$$
+
+assume $u,v,k,t$ are all given(t is sometime in the future), I am trying to compute the value of density function.
+
+then I need $\lambda_{k}^{u, v}(t)$, according to (1), I need to compute ...
+
+
+replacing v with all the entities and selected the top ranks, compute Mean Average Rank (MAR) and HITS(@10).
+
+
+{{% callout warning %}}
+
+This link prediction task is quite differnt from what we encounter in the real world. Since you need to provide u,t,k.
+
+In reality, people did not give any kind of info, but it's still computatble.
+
+For example, I want to know in future time t, which pair (u ,v) will have a k event. I can compute all the density for every u and every v...
+
+{{% /callout %}}
 
 
 ## event time prediction
 
+this is equavalent to "computing the expectation of t" (Neural hawkes process also provides similar predictive task for evaluation).
+- you can have interval estimation of the t.
+
+$$
+E(t)=\int_{t}^{\infty} t f_{k}^{u, v}(t) d t
+$$
 
 
 
-
-
-See all appendix H, G
+- See all appendix H, G
+- Dyrep only use hawkes process structure benefitial to training... not timing....
 
 
 
