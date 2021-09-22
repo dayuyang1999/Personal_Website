@@ -37,7 +37,10 @@ You have to specify which verison of `something` you intend to install.
 
 # From 0 to 100
 
-Here is a stable version of Graph Research Environment provided by [Dr. Xiaohang Zhao](https://www.linkedin.com/in/xiaohangzhao/).
+Here is a stable version of Graph Research Environment provided by [Dr. Xiaohang Zhao](https://www.linkedin.com/in/xiaohangzhao/). **This by no means is the latest version.**
+
+
+
 
 ```bash
 conda create --name GNN python=3.8.10
@@ -50,7 +53,7 @@ conda install -c conda-forge ipywidgets
 jupyter nbextension enable --py widgetsnbextension
 # jupyter contrib nbextension install --user
 
-# install pytorch
+# install pytorch the lastest version is 1.9
 conda install pytorch=1.8.0 torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
 
@@ -78,6 +81,33 @@ jupyter kernelspec uninstall gnn
 # remove all the caches created by conda
 conda clean --all
 ```
+
+Here is another choice provided by [Jiaxuan You](https://cs.stanford.edu/people/jiaxuan/):
+
+```bash
+# Python environment (Optional)
+conda create -n envname python=3.7
+source activate envname
+
+# Pytorch
+# CUDA versions: cpu, cu92, cu101, cu102, cu101, cu111
+pip install torch==1.8.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+
+# Pytorch Geometric
+# CUDA versions: cpu, cu92, cu101, cu102, cu101, cu111
+# TORCH versions: 1.4.0, 1.5.0, 1.6.0, 1.7.0, 1.8.0
+CUDA=cu101
+TORCH=1.8.0
+pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html
+pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html
+pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html
+pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-${TORCH}+${CUDA}.html
+pip install torch-geometric
+
+
+
+```
+
 
 
 # from 50 to 100

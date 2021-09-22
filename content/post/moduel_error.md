@@ -50,6 +50,7 @@ projects: []
   - [2. Add `PYTHONPATH`](#2-add-pythonpath)
     - [1st, found where the module is (in the terminal):](#1st-found-where-the-module-is-in-the-terminal)
     - [2nd, add this dir to the `PYTHONPATH`](#2nd-add-this-dir-to-the-pythonpath)
+- [Loading customized module](#loading-customized-module)
 
 Sometimes, even if we successfully installed the python package in terminal (typically use `pip install Module Name`), we still unable to load the package in Python Code. 
 
@@ -117,3 +118,6 @@ import wrds
 
 
 ```
+
+
+
