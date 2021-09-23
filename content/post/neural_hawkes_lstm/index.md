@@ -3,7 +3,7 @@
 
 title: "Temporal Point Process 3.1: The Neural Hawkes Process"
 subtitle: "The key is to be clear about: 1. Parameterize $\\lambda$, 2. Training, 3. Prediction and 4. Evaluation: "
-summary: ""
+summary: "Modeling of timing is embedded into the LSTM structure. so the hidden state $h(t)$ is a function of $t$(continuous)"
 authors: 
 - Dylan Yang
 tags: 
@@ -32,6 +32,9 @@ image:
 projects: []
 ---
 
+Code: https://github.com/dayuyang1999/neurawkes
+
+- [Comments](#comments)
 - [Problem Description](#problem-description)
 - [Parameterizing $\lambda$: Continus LSTM hidden state](#parameterizing-lambda-continus-lstm-hidden-state)
   - [Model Summary](#model-summary)
@@ -47,6 +50,8 @@ projects: []
 
 <br><br>
 <br><br>
+
+
 
 By observing $\left[\left(k_{1}, t_{1}\right),\left(k_{2}, t_{2}\right), \ldots,\left(k_{T}, t_{T}\right)\right]$ sequence as training data, how to train the point process model? How could we predict? How to tell if the prediction is reliable?
 
@@ -67,6 +72,18 @@ For evaluation:
 
 <br><br>
 <br><br>
+
+# Comments
+
+TPP + LSTM = continuous sequence dynamic modeling (key is make RNN continuous)
+
+Modeling of timing is embedded into the LSTM structure. so the hidden state $h(t)$ is a function of $t$(continuous).
+
+
+
+<br><br>
+<br><br>
+
 
 # Problem Description
 Modeling K types of events, each of which are observed to occur in continuous time.

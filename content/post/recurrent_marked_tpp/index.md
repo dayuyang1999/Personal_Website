@@ -33,6 +33,8 @@ image:
 projects: []
 ---
 
+Code: https://github.com/woshiyyya/ERPP-RMTPP
+
 - [Comments](#comments)
 - [Problem Formulation](#problem-formulation)
 - [Model: Recurrent Marked TPP](#model-recurrent-marked-tpp)
