@@ -28,8 +28,7 @@ image:
 projects: []
 ---
 
-All sources could be found here
-- https://github.com/srijankr/jodie
+All sources could be found in [Github Repo](https://github.com/srijankr/jodie)
 
 
 
