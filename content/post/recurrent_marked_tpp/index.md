@@ -3,7 +3,7 @@
 
 title: "Recurrent Marked Temporal Point Process"
 subtitle: ""
-summary: ""
+summary: "The timing modeling is not embedded in the complex structure of RNN, so the pdf of $t$ could be solved analytically"
 authors: 
 - Dylan Yang
 tags: 
@@ -33,7 +33,24 @@ image:
 projects: []
 ---
 
+- [Comments](#comments)
+- [Problem Formulation](#problem-formulation)
+- [Model: Recurrent Marked TPP](#model-recurrent-marked-tpp)
+  - [Probability](#probability)
+  - [Model Formulation](#model-formulation)
+    - [Input Layer](#input-layer)
+    - [Hidden layer](#hidden-layer)
+    - [Maker Generation](#maker-generation)
+    - [Time generation](#time-generation)
+- [Training](#training)
+- [Appendix](#appendix)
+  - [get the analytical solution of $\hat{t}$ under (Du et al. 2016) case.](#get-the-analytical-solution-of-hatt-under-du-et-al-2016-case)
 
+# Comments
+
+TPP+RNN = continous sequence dynamic modeling (key is make RNN continuous)
+
+The timing modeling is not embedded in the complex structure of RNN, so the pdf of $t$ could be solved analytically. 
 
 
 
@@ -237,6 +254,19 @@ The analytic solution is obviously obtainable. see Appendix for derivation.
 {{% /callout %}}
 
 
+<br><br>
+
+
+# Training
+
+MLE:
+
+$$\ell\left(\left\{\mathcal{S}^{i}\right\}\right)=\sum_{i} \sum_{j}\left(\log P\left(y_{j+1}^{i} \mid \boldsymbol{h}_{j}\right)+\log f\left(d_{j+1}^{i} \mid \boldsymbol{h}_{j}\right)\right)$$
+
+
+
+
+<br><br>
 
 
 
@@ -248,10 +278,8 @@ The analytic solution is obviously obtainable. see Appendix for derivation.
 
 
 
-
-
-
-
+<br><br>
+<br><br>
 
 
 
