@@ -6,7 +6,7 @@ title: Dylan Yang
 superuser: true
 
 # Role/position/tagline
-role: Ph.D. Student in [Financial Analytics](https://lerner.udel.edu/programs/phd-programs/financial-services-analytics-phd/)
+role: Ph.D. Student in [Financial Services Analytics](https://lerner.udel.edu/programs/phd-programs/financial-services-analytics-phd/)
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -67,6 +67,6 @@ email: "dayu at udel dot edu"
 highlight_name: false
 ---
 
-Dylan Yang is a 1st-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
+Dylan Yang is a 1st-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

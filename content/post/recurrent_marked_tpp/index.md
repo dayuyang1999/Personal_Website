@@ -35,6 +35,8 @@ projects: []
 
 Code: https://github.com/woshiyyya/ERPP-RMTPP
 
+---
+
 - [Comments](#comments)
 - [Problem Formulation](#problem-formulation)
 - [Model: Recurrent Marked TPP](#model-recurrent-marked-tpp)
@@ -42,7 +44,7 @@ Code: https://github.com/woshiyyya/ERPP-RMTPP
   - [Model Formulation](#model-formulation)
     - [Input Layer](#input-layer)
     - [Hidden layer](#hidden-layer)
-    - [Maker Generation](#maker-generation)
+    - [Type Generation](#type-generation)
     - [Time generation](#time-generation)
 - [Training](#training)
 - [Appendix](#appendix)
@@ -52,9 +54,10 @@ Code: https://github.com/woshiyyya/ERPP-RMTPP
 
 TPP+RNN = continous sequence dynamic modeling (key is make RNN continuous)
 
-The timing modeling is not embedded in the complex structure of RNN, so the pdf of $t$ could be solved analytically. 
+1. The timing modeling is not embedded in the complex structure of RNN, so the pdf of $t$ could be solved analytically. 
 
-
+2. the key is $h$, RNN summarize all historical event as $h$, which replace the summation term of the CIF parameterization of traditional hawkes process. 
+   1. then, use CIF $\lambda$ to decide timing(pdf), type()
 
 # Problem Formulation
 
@@ -152,13 +155,14 @@ since it's simple RNN:
 
 ![](https://cdn.mathpix.com/snip/images/a-6SuKjW7y7Ynpm8zKYLobxtri-bvKYa7Bawi07xH2I.original.fullsize.png)
 
-### Maker Generation
+### Type Generation
+
+The type generation follows "How Traditional Deep Learning cope with multi-nominal distribution" idea, put into a FCN, and pass to softmax.
 
 The probability of a type, is a function of $h_j$
 
 $$P\left(y_{j+1}=k \mid \boldsymbol{h}_{j}\right)=\frac{\exp \left(\boldsymbol{V}_{k,:}^{y} \boldsymbol{h}_{j}+b_{k}^{y}\right)}{\sum_{k=1}^{K} \exp \left(\boldsymbol{V}_{k,:}^{y} \boldsymbol{h}_{j}+b_{k}^{y}\right)}$$
 
-very common in ML papers...
 
 
 
