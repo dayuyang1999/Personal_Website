@@ -230,9 +230,25 @@ $$
 \text { intensity }
 \end{array}})
 $$
+- $h_j$ is updated when the most recent event happens(and then never changed). It's unrelated to $t$. (So could be seen as a constant)
+- timing is fully modeled in $w^{t}\left(t-t_{j}\right)$. 
 
 
+So, since except $w^{t}\left(t-t_{j}\right)$, the rest of the terms are unrelated to $t$ (treat as constant when doing integral), so, for convinience, I rewrite $\lambda$ as:
 
+$$
+
+\lambda^*(t) = e^{at+b}
+
+$$
+- a = w (a scalar)
+- b = the rest, containing $h$ which is the output of "a complex structure"
+
+
+The analytic solution is obviously obtainable. see Appendix for derivation.
+
+
+---
 
 
 
@@ -241,4 +257,78 @@ $$
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Appendix
+
+## get the analytical solution of $\hat{t}$ under (Du et al. 2016) case.
+
+According to:
+
+$$
+\hat{t}_{j+1} = \int_{t_{j}}^{\infty} t\cdot \left[   \lambda^{*}(t) \exp \left(-\int_{t_{j}}^{t} \lambda^{*}(\tau) d \tau\right) \right]dt
+$$
+
+if we are trying to analytically analysis $\hat{t}$ above:
+
+$$\int x(a x+b)\left(e^{a x+b}-e^{at_j-b}\right) d x$$
+- since just a trail, I set $t_j=0$ for simplicity:
+
+reset $u=a x+b$:
+
+$$
+=\int \frac{u(u-b)\left(e^{u}-e^{b}\right)}{a^{2}} d u
+$$
+
+take the constant out: 
+
+$$
+=\frac{1}{a^{2}} \cdot \int u(u-b)\left(e^{u}-e^{b}\right) d u
+$$
+
+expand $u(u-b)\left(e^{u}-e^{b}\right): e^{u} u^{2}-e^{b} u^{2}-b e^{u} u+b e^{b} u$:
+
+$$=\frac{1}{a^{2}} \cdot \int e^{u} u^{2}-e^{b} u^{2}-b e^{u} u+b e^{b} u d u$$
+
+summation rule, we could integral each tiny part seperately:
+
+$$=\frac{1}{a^{2}}\left(\int e^{u} u^{2} d u-\int e^{b} u^{2} d u-\int b e^{u} u d u+\int b e^{b} u d u\right)$$
+
+---
+1st part: $\int e^{u} u^{2} d u=u^{2} e^{u}-2\left(e^{u} u-e^{u}\right)$
+
+2nd part: $\int e^{b} u^{2} d u=\frac{e^{b} u^{3}}{3}$
+
+3rd part: $\int b e^{u} u d u=b\left(e^{u} u-e^{u}\right)$
+
+4th part: $\int b e^{b} u d u=\frac{b e^{b} u^{2}}{2}$
+
+---
+
+so:
+
+$$=\frac{1}{a^{2}}\left(u^{2} e^{u}-2\left(e^{u} u-e^{u}\right)-\frac{e^{b} u^{3}}{3}-b\left(e^{u} u-e^{u}\right)+\frac{b e^{b} u^{2}}{2}\right)$$
+
+and reverse change varibale: $u=a x+b$
+
+$$=\frac{1}{a^{2}}((a x+b)^{2} e^{a x+b}-2\left(e^{a x+b}(a x+b)-e^{a x+b}\right)-\frac{e^{b}(a x+b)^{3}}{3}-b(e^{a x+b}(a x+b)-e^{a x+b}+\frac{b e^{b}(a x+b)^{2}}{2})$$
 
