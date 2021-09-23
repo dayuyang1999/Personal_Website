@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Recurrent Marked TPP"
+title: "Recurrent Marked Temporal Point Process"
 subtitle: ""
 summary: ""
 authors: 
@@ -9,6 +9,8 @@ authors:
 tags: 
 - Statistics
 - Point Process
+- Recurrent Neural Network
+
 categories: []
 date: 2021-09-23T13:29:35-04:00
 lastmod: 2021-09-23T13:29:35-04:00
@@ -46,7 +48,7 @@ A set of sequence $C={S^1, S^2, ...}$, each sequence  $S^i=((t^i_1, y^i_1), (t^i
 <br><br>
 
 
-# Model: RECURRENT MARKED TEMPORAL POINT PROCESS
+# Model: Recurrent Marked TPP
 
 <br><br>
 
@@ -61,9 +63,7 @@ $$
 
 Then the likelihood of a sequence is:
 
-$$
-f\left(\left\{\left(t_{j}, y_{j}\right)\right\}_{j=1}^{n}\right)=\prod_{j} f\left(t_{j}, y_{j} \mid \mathcal{H}_{t}\right)=\prod_{j} f^{*}\left(t_{j}, y_{j}\right)
-$$
+![](https://cdn.mathpix.com/snip/images/jxPViR_PbAw1hoX9yGc4J1ARfzTXwH29J5-S9DFaaqo.original.fullsize.png)
 
 the pdf $f^*$ coudl have many design. One possible way is to seperate `type` and `time`:
 
@@ -131,9 +131,7 @@ $t$ no change
 
 since it's simple RNN:
 
-$$
-\boldsymbol{h}_{j}=\max \left\{\boldsymbol{W}^{y} \boldsymbol{y}_{j}+\boldsymbol{W}^{t} \boldsymbol{t}_{j}+\boldsymbol{W}^{h} \boldsymbol{h}_{j-1}+\boldsymbol{b}_{h}, 0\right\}
-$$
+![](https://cdn.mathpix.com/snip/images/a-6SuKjW7y7Ynpm8zKYLobxtri-bvKYa7Bawi07xH2I.original.fullsize.png)
 
 ### Maker Generation
 
@@ -166,23 +164,27 @@ That means when generate a new event(or, called prediction).
 
 recall the pdf of $t$:
 
-$$f^{*}(t)=\lambda^{*}(t) \exp \left(-\int_{t_{j}}^{t} \lambda^{*}(\tau) d \tau\right)$$
-
+![](https://cdn.mathpix.com/snip/images/AU6BYZq39yx0BHl8lbaics-FCTYLBOEhy0RheD0Mhoo.original.fullsize.png)
 
 to estimate the timing of next incoming event, using the expectation: (**why use expectation?**)
 
-$$
-\hat{t}_{j+1}=\int_{t_{j}}^{\infty} t \cdot f^{*}(t) d t
-$$
+$$\hat{t}_{j+1}=\int_{t_{j}}^{\infty} t \cdot f^{*}(t) dt$$
+
+
+---
+
+$\hat{t}_{j+1}$ is relied on CIF, and it's defined as:
+
+![](https://cdn.mathpix.com/snip/images/Wq8-QpYPte9aaJuSxxmvgW-5dBB89A_gzKp0NbMEFAY.original.fullsize.png)
+
+
 
 
 {{% callout note %}}
 
 if I combo these two together, the estimation of timing is 
 
-$$
-\hat{t}_{j+1} = \int_{t_{j}}^{\infty} t\cdot \left[   \lambda^{*}(t) \exp \left(-\int_{t_{j}}^{t} \lambda^{*}(\tau) d \tau\right) \right]dt
-$$
+![](https://cdn.mathpix.com/snip/images/vh3NG0I7u23yKVbhOchmdIfdFaq_c4nmAg0V54zPYWY.original.fullsize.png)
 
 Notice that: here **the double-integral is all targeting time t**.
 
@@ -203,44 +205,23 @@ $$
 $$
 - $h$ is a function of t (continous)
 
-$$
-\mathbf{h}(t)=\mathbf{o}_{i} \odot(2 \sigma(2 \mathbf{c}(t))-1) \text { for } t \in\left(t_{i-1}, t_{i}\right]
-$$
+![](https://cdn.mathpix.com/snip/images/ul-sMtDv-szMCYPTtMQilF5qwEB0fIbjmP8Q49EMB7I.original.fullsize.png)
 - $c$ is a function of t (continous):
-
-$$
-\mathbf{c}(t) \stackrel{\text { def }}{=} \overline{\mathbf{c}}_{i+1}+\left(\mathbf{c}_{i+1}-\overline{\mathbf{c}}_{i+1}\right) \exp \left(-\boldsymbol{\delta}_{i+1}\left(t-t_{i}\right)\right) \text { for } t \in\left(t_{i}, t_{i+1}\right]
-$$
+![](https://cdn.mathpix.com/snip/images/OhkFYllLJCxhhewAvJGqjT4cY00JTQGuNGJV8BVfmX0.original.fullsize.png)
 
 Here we could see that: (Mei and Eisner 2017) integrate the modeling of timing into a complex Deep Learning Structure(LSTM). So when he estimate the expectation of $t$, he has no way to derive the analytic solution, and must use numerical method to handle all the integrals.
 
 
 ---
 2nd, what (Du et al. 2016) did:
-
-$$
-\lambda^{*}(t)=\exp (\underbrace{\boldsymbol{v}^{t^{\top}} \cdot \boldsymbol{h}_{j}}_{\begin{array}{c}
-\text { past } \\
-\text { influence }
-\end{array}}+\underbrace{w^{t}\left(t-t_{j}\right)}_{\begin{array}{c}
-\text { current } \\
-\text { influence }
-\end{array}}+\underbrace{b^{t}}_{\begin{array}{c}
-\text { base } \\
-\text { intensity }
-\end{array}})
-$$
+![](https://cdn.mathpix.com/snip/images/x0meaLBzNNvUPdbrIGVmx_xZpj-CLQz9cu-I2w2MDFg.original.fullsize.png)
 - $h_j$ is updated when the most recent event happens(and then never changed). It's unrelated to $t$. (So could be seen as a constant)
 - timing is fully modeled in $w^{t}\left(t-t_{j}\right)$. 
 
 
 So, since except $w^{t}\left(t-t_{j}\right)$, the rest of the terms are unrelated to $t$ (treat as constant when doing integral), so, for convinience, I rewrite $\lambda$ as:
 
-$$
-
-\lambda^*(t) = e^{at+b}
-
-$$
+$$\lambda^*(t) = e^{at+b}$$
 - a = w (a scalar)
 - b = the rest, containing $h$ which is the output of "a complex structure"
 
@@ -284,9 +265,7 @@ The analytic solution is obviously obtainable. see Appendix for derivation.
 
 According to:
 
-$$
-\hat{t}_{j+1} = \int_{t_{j}}^{\infty} t\cdot \left[   \lambda^{*}(t) \exp \left(-\int_{t_{j}}^{t} \lambda^{*}(\tau) d \tau\right) \right]dt
-$$
+$$\hat{t}_{j+1} = \int_{t_{j}}^{\infty} t\cdot \left[   \lambda^{*}(t) \exp \left(-\int_{t_{j}}^{t} \lambda^{*}(\tau) d \tau\right) \right]dt$$
 
 if we are trying to analytically analysis $\hat{t}$ above:
 
@@ -295,15 +274,11 @@ $$\int x(a x+b)\left(e^{a x+b}-e^{at_j-b}\right) d x$$
 
 reset $u=a x+b$:
 
-$$
-=\int \frac{u(u-b)\left(e^{u}-e^{b}\right)}{a^{2}} d u
-$$
+$$=\int \frac{u(u-b)\left(e^{u}-e^{b}\right)}{a^{2}} d u$$
 
 take the constant out: 
 
-$$
-=\frac{1}{a^{2}} \cdot \int u(u-b)\left(e^{u}-e^{b}\right) d u
-$$
+$$=\frac{1}{a^{2}} \cdot \int u(u-b)\left(e^{u}-e^{b}\right) d u$$
 
 expand $u(u-b)\left(e^{u}-e^{b}\right): e^{u} u^{2}-e^{b} u^{2}-b e^{u} u+b e^{b} u$:
 
