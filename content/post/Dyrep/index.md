@@ -138,6 +138,8 @@ $$
 
 ![](https://cdn.mathpix.com/snip/images/w1BjkkwbVJmSwuySvnSf1swSQaEJNZHiJotgJ_mEmAQ.original.fullsize.png)
 
+
+
 <br><br>
 
 ## Inductive representation network
@@ -294,6 +296,16 @@ The density function is
 $$
 f_{k}^{u, v}(t)=\lambda_{k}^{u, v}(t) \cdot \exp \left(\int_{\bar{t}}^{t} \lambda(s) d s\right)
 $$
+
+
+{{% callout warning %}}
+
+Here the author did not tell how to compute this integral, which has no analystical formulation.
+
+And $f_{k}^{u, v}(t)$(pdf) has nothing to do with $f_{k}(t)$ (a function to differentiate k=0 and k=1)...don't be confused
+
+{{% /callout %}}
+
 
 ---
 assume $u,v,k,t$ are all given(t is sometime in the future), I am trying to compute the value of density function.
