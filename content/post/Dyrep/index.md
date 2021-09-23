@@ -33,6 +33,34 @@ projects: []
 Published in ICLR 2019. [Openreview](https://openreview.net/forum?id=HyePrhR5KX)
 
 
+
+
+- [Problem Formulation](#problem-formulation)
+- [Model: DyRep](#model-dyrep)
+  - [In general](#in-general)
+  - [Modeling two-time sclae graph dynamics](#modeling-two-time-sclae-graph-dynamics)
+  - [Inductive representation network](#inductive-representation-network)
+    - [Localized Embedding Propagation](#localized-embedding-propagation)
+  - [Aggregator (analogue to Attention mechanism(S) + update A)](#aggregator-analogue-to-attention-mechanisms--update-a)
+- [Training](#training)
+  - [Parameters:](#parameters)
+  - [Method: MLE](#method-mle)
+    - [Likelihood function](#likelihood-function)
+    - [batch training](#batch-training)
+- [Evaluation](#evaluation)
+  - [Link prediction](#link-prediction)
+  - [Event time prediction](#event-time-prediction)
+- [Appendix](#appendix)
+  - [Summary of Overall Embedding Update Process](#summary-of-overall-embedding-update-process)
+  - [Attention Mechanism](#attention-mechanism)
+  - [Node Attributes and Edge Types Support](#node-attributes-and-edge-types-support)
+  - [New nodes](#new-nodes)
+  - [Monte Carlo Estimation for survival term in Likelihood](#monte-carlo-estimation-for-survival-term-in-likelihood)
+- [Some random thinking](#some-random-thinking)
+
+
+---
+
 # Problem Formulation
 
 **Graph:**
@@ -61,7 +89,7 @@ $e=(u, v, t, k)$
   -  $k=1$ is interaction (communication)
 
 
-Complete sequence of observed events in window $[0, T]$ as: $O=\left\{(u, v, t, k)_{p}\right\}_{p=1}^{P}$.
+Complete sequence of observed events in window $[0, T]$ as: $O=(u, v, t, k)_{p=1}^{P}$.
 
 
 <br><br>
@@ -230,9 +258,7 @@ $$
 
 and aggregator (here the authro use max)
 
-$$
-\mathbf{h}_{\text {struct }}^{u}(\bar{t})=\max \left(\left\{\sigma\left(q_{u i}(t) \cdot \mathbf{h}^{i}(\bar{t})\right), \forall i \in \mathcal{N}_{u}(\bar{t})\right\}\right)
-$$
+![](https://cdn.mathpix.com/snip/images/q82jEjqRAtnmPbZ4pV7WYDBg7eTvA6HuJIn4HREvL0o.original.fullsize.png)
 
 
 
@@ -246,7 +272,7 @@ $$
 
 ## Parameters:
 
-$\boldsymbol{\Omega}=\left\{\mathbf{W}^{\text {struct }}, \mathbf{W}^{r e c}, \mathbf{W}^{t}, \mathbf{W}^{h}, \mathbf{b}^{h},\right. \left.\left\{\boldsymbol{\omega}_{k}\right\}_{k=0,1},\left\{\psi_{k}\right\}_{k=0,1}\right\}$
+![](https://cdn.mathpix.com/snip/images/qF1atYSn2DrM70EVzwj_PZQwE5_pod-Ho2iOJOmoDj4.original.fullsize.png)
 
 ## Method: MLE
 
@@ -371,7 +397,7 @@ $$
 ## Node Attributes and Edge Types Support
 
 initalized with features:
-- the first time, $z^{v}\left(\bar{t}_{p}^{v}\right)=\mathbf{x}_{v}$ where $\mathbf{x}_{v}$ is randomly initialized.
+- the first time, $z$ is randomly initialized.
 
 updating features:
 - adding extra term in Eq. 4
