@@ -120,11 +120,14 @@ Some implicit Assumptions of DyRep:
 
 ## Modeling two-time sclae graph dynamics
 
+
 {{% callout note %}}
 
 communication and association is called "two-time scale" in this paper.
 
 {{% /callout %}}
+
+---
 
 intensity function $\lambda_{k}^{u, v}(t)$:
 
@@ -166,7 +169,13 @@ $$
 
 ![](https://cdn.mathpix.com/snip/images/w1BjkkwbVJmSwuySvnSf1swSQaEJNZHiJotgJ_mEmAQ.original.fullsize.png)
 
+---
 
+Actually, I could summarize everthing above to one line:
+
+$$
+\lambda_{k, (u,v)}^{t}=\psi_{k} \log \left(1+\exp \left\{\frac{\omega_{k}^{\top}\left[\mathbf{z}_{u}^{t-1}, \mathbf{z}_{v}^{t-1}\right]}{\psi_{k}}\right\}\right)
+$$
 
 <br><br>
 
@@ -435,9 +444,15 @@ uniformly pick up $N$ negative sample pair:
 
 {{% callout warning %}}
 
-I think there's an error, why finally **divide N** is you want to estimate a triple-layer **summation**?
+I think there are 2 error, 
 
-And did not tell anything about the integral over the triple-layer summation ...
+1. why finally **divide N** is you want to estimate a triple-layer **summation**?
+  1. and did not tell anything about the integral over the triple-layer summation ...(Should $\times |M|$ at the end)
+2. for survival term? the integral? 
+   1. So here is for computing the whole $\int \sum \sum \sum$ term, not just $\sum \sum \sum$ as mentioned in the text.
+   2. I only heard that we could use Monte carlo estimation to estimate integral, not summation!
+
+So here may be a **combo** of **negative sampling + Monte Carlo Estimation**
 
 {{% /callout %}}
 

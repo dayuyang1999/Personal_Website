@@ -33,9 +33,9 @@ projects: []
 
 - [Problem Description](#problem-description)
 - [Parameterizing $\lambda$: Continus LSTM hidden state](#parameterizing-lambda-continus-lstm-hidden-state)
+  - [Model Summary](#model-summary)
 - [Training Algorithm](#training-algorithm)
   - [MLE](#mle)
-    - [The integral](#the-integral)
     - [Optimize](#optimize)
 - [Prediction](#prediction)
   - [Time](#time)
@@ -114,6 +114,34 @@ Now, the `hidden state` $h(t)$ is
 - dependent on a time-varying $C(t)$ (so itself is time-varying)
 - has $.._k$  subscript
 
+
+## Model Summary
+
+---
+**$\lambda$ part:**
+
+$$
+\lambda_{k}(t)=f_{k}\left(\mathbf{w}_{k}^{\top} \mathbf{h}(t)\right)
+$$
+- $f_k$ must be a mono non-decreasing function, and non-linear.
+- this is a general choice:
+$$
+f(x)=s \log (1+\exp (x / s))
+$$
+
+
+$$
+\mathbf{h}(t)=\mathbf{o}_{i} \odot(2 \sigma(2 \mathbf{c}(t))-1) \text { for } t \in\left(t_{i-1}, t_{i}\right]
+$$
+
+
+**LSTM part**
+
+
+
+
+
+
 <br><br>
 <br><br>
 
@@ -131,12 +159,19 @@ $$\ell=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\underbrace
   
 <br><br>
 
-### The integral
+{{% callout note %}}
+
+**The integral $\int_{t=0}^{T} \lambda(t) d t$**
 
 Using Monte-Carlo Integration to handle the integral part of the likelihood (it has no analytical solution). Which gives an unbiased estimat of $\Lambda$
 
 ![](https://cdn.mathpix.com/snip/images/yuq8GwJOMFOesoCspIwYanrcfEAIyHaTBmEdcoBPGmc.original.fullsize.png)
 - the key is to uniformly draw sample from the entire time integral interval.
+
+
+
+{{% /callout %}}
+
 
 <br><br>
 
@@ -171,7 +206,7 @@ $$f(t|H_i) = \lambda(t) \exp \left(-\int_{t_{i-1}}^{t} \lambda(s) d s\right)$$
 
 to predict a single time, and expect L2 loss to be as low as possible, we should choose:
 
-$$\hat{t}_{i}=\mathbb{E}\left[t_{i} \mid \mathcal{H}_{i}\right]=\int_{t_{i-1}}^{\infty} t p_{i}(t) d t$$
+![](https://cdn.mathpix.com/snip/images/BAdEX4tPmLDK6dZYVBMeYUPuRg0Uh1xUIlA_CpVHxeI.original.fullsize.png)
 - the expectation of $t$
 
 <br><br>

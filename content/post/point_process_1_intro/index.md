@@ -35,6 +35,10 @@ projects: []
 - [Survival Function](#survival-function)
 - [The Hazard Function](#the-hazard-function)
 - [The Relationship bewteen notations](#the-relationship-bewteen-notations)
+- [Summary of the meaning of each notation](#summary-of-the-meaning-of-each-notation)
+  - [$\lambda$:](#lambda)
+  - [f(t)](#ft)
+  - [$S(t)$](#st)
 - [If we have multiple type of event K](#if-we-have-multiple-type-of-event-k)
 - [Some Other Useage](#some-other-useage)
   - [Expectation of Life](#expectation-of-life)
@@ -235,6 +239,40 @@ if we have intensity $\lambda$ =2 :
 - decay more intensively (since the $\int$ always =1, and we start higher)
 
 ---
+
+<br><br>
+
+
+
+# Summary of the meaning of each notation
+
+## $\lambda$: 
+- "the number of event happen per unit time"
+
+or $\lambda dt$ is the probability of the occurence of a new event.(Givne the history $H$)
+
+## f(t)
+
+
+$$f^{*}(t)=\lambda^{*}(t) \exp \left(-\int_{t_{n}}^{t} \lambda^{*}(\tau) d \tau\right)$$
+
+after observing the most recent event $e_{i-1}$, for the timing of next event(not happen yet)
+ $t$, $t$ is a random varible.
+
+$f(t)$: the pdf
+
+$F(t)$: the cdf, $P(T < t)$, the probability that the new event will hapen before time t.(since the last event timing $t_{i-1}$)
+
+
+## $S(t)$
+
+First, be clear that
+$$
+\lambda^{*}(t) d t=\frac{f^{*}(t) d t}{S^{*}(t)}=\frac{f^{*}(t) d t}{1-F^{*}(t)}
+$$
+
+$S^{*}(t)=\exp \left(-\int_{+}^{t} \lambda^{*}(\tau) d \tau\right)$ is the probability that the new event happen after $t$, $P(T>t)$.
+
 
 
 
