@@ -63,10 +63,7 @@ e.g.: [Du et al., 2016].
 
 3 steps:
 
-1. Represent each event $\left(t_{j}, m_{j}\right)$ as a feature vector $\boldsymbol{y}_{j}$
-2. Encode the history $\mathcal{H}_{t_{i}}$ (represented by a sequence of feature vectors $\left.\left(\boldsymbol{y}_{1}, \ldots, \boldsymbol{y}_{i-1}\right)\right)$ into a fixed-dimensional history embedding $\boldsymbol{h}_{i}$.
-3. Use the history embedding $\boldsymbol{h}_{i}$ to parametrize the conditional distribution over the next event $P_{i}\left(t_{i}, m_{i} \mid \mathcal{H}_{t_{i}}\right)$
-
+![](https://cdn.mathpix.com/snip/images/p7JrGEgU6xTd2EN7lP7_lkEcWW51wobg0T3p3v1DJ48.original.fullsize.png)
 
 ## Representing Events as Feature Vectors
 
@@ -161,7 +158,7 @@ bad case: thinning sampling (do not benefit from parallel hardware like GPUs)
 
 the joint distribution of an event is factorized by the distribution $P_{i}^{*}\left(\tau_{i}, m_{i}\right)$. if we assume the independent of two:
 
-$$P_i^*(\tau_i, m_i)=P_i^*(\tau_i) \cdot P_i^*(m_i)$$
+![](https://cdn.mathpix.com/snip/images/nDbuo8mibdnFqNQSydwhSYu4fucBiqaqn2-SFUZoZXw.original.fullsize.png)
 
 these two are both parameterzed using $h_i$ via $\lambda$:
 
@@ -220,7 +217,7 @@ the intensity $λ^*_k$ is defined through 3 factors (commonly used):
 
 Here are 2 examples from (Du et al. 2016) and (Zuo et al., 2020.):
 
-$$\lambda^{*}(t)=\exp (\underbrace{\boldsymbol{v}^{\pm}{ }^{\top} \cdot \boldsymbol{h}_{j}}_{\begin{array}{c}\text { past } \\ \text { influence }\end{array}}+\underbrace{w^{t}\left(t-t_{j}\right)}_{\begin{array}{c}\text { current } \\ \text { influence }\end{array}}+\underbrace{b^{t}}_{\begin{array}{c}\text { base } \\ \text { intensity }\end{array}})$$
+![](https://cdn.mathpix.com/snip/images/WGy9w_HuXWO-J1irfXJljpMOSoHjsxYr-TeDNotCycM.original.fullsize.png)
 
 
 ---
