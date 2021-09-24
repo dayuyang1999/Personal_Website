@@ -3,9 +3,11 @@
 
 title: "TGN"
 subtitle: ""
-summary: ""
-authors: []
-tags: []
+summary: "A basic framework of continous temporal dynamic graph modeling. Benchmarked in 2020"
+authors:
+- Dylan Yang
+tags: 
+- Graph Neural Network
 categories: []
 date: 2021-09-21T19:06:38-04:00
 lastmod: 2021-09-21T19:06:38-04:00
@@ -29,7 +31,8 @@ projects: []
 ---
 
 Clarification:
-- Everything Summarize from Rossi's [Github Repo](https://github.com/twitter-research/tgn)
+- Summarize from Rossi's [Github Repo](https://github.com/twitter-research/tgn)
+
 
 
 ---
@@ -38,7 +41,9 @@ Clarification:
 # Problem Formulation
 
 
-a sequence of time-stamped events $\mathcal{G}=\left\{x\left(t_{1}\right), x\left(t_{2}\right), \ldots\right\}$
+a sequence of time-stamped events: 
+
+![](https://cdn.mathpix.com/snip/images/5F8v6OCmL6Uyyovb9qNc_z9cf7MfWMbyKXPU0jXB30s.original.fullsize.png)
 
 ## Node event $\mathbf{v}_{i}(t)$
  1. $i$: index
