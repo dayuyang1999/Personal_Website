@@ -8,6 +8,7 @@ authors:
 - Dylan Yang
 tags: 
 - Statistics
+- Point Process
 categories: []
 date: 2021-09-17T20:51:00-04:00
 lastmod: 2021-09-17T20:51:00-04:00
