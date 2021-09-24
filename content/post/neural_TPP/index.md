@@ -1,13 +1,13 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Neural Temporal Point Process, a review"
+title: "Neural Temporal Point Process, A Review"
 subtitle: ""
 summary: ""
 authors: 
 - Dylan Yang
 tags:
-- Temporal Point Process
+- Point Process
 - Statistics
 categories: []
 date: 2021-09-23T19:25:50-04:00
