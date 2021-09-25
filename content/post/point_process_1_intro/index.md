@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 1: introduction"
+title: "TPP intro: PDF, CDF, Notations and Likelihood"
 subtitle: ""
 summary: "Point Process is widely used in modeling sequence of events that: 1. timing is important 2.rare to happen"
 authors: 

@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Top Scholars researching Merger And Acquisition"
+title: "Active Researcher and papers"
 subtitle: ""
 summary: "Subscribe Those Channels!"
 authors: []
@@ -29,9 +29,12 @@ image:
 projects: []
 ---
 
-Here I listed some scholars who did significant number of research related to Merger and Acquisition(Takeover) with good publications
+# Researcher
 
 - [Gerard Hoberg](http://faculty.marshall.usc.edu/Gerard-Hoberg/)
 - [Tingting Liu](https://www.ivybusiness.iastate.edu/directory/ttliu/)
 - [Darren Bernard](https://foster.uw.edu/faculty-research/directory/darren-bernard/)
 - [Jarrad Harford](https://foster.uw.edu/faculty-research/directory/jarrad-harford/)
+
+
+# Papers

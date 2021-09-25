@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 3.1: The Neural Hawkes Process"
+title: "Neural Hawkes Process"
 subtitle: "The key is to be clear about: 1. Parameterize $\\lambda$, 2. Training, 3. Prediction and 4. Evaluation: "
 summary: "Modeling of timing is embedded into the LSTM structure. so the hidden state $h(t)$ is a function of $t$(continuous)"
 authors: 

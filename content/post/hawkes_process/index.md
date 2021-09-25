@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Temporal Point Process 2: Hawkes Process"
+title: "TPP intro: Hawkes Process"
 subtitle: ""
 summary: "Hawkes Process is a special kind of point process with 1. postive  2. additive 3. exponentail decay self-exiciting factor 2. "
 authors: 

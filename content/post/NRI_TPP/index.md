@@ -4,8 +4,12 @@
 title: "MTPP via Graph used for NRI"
 subtitle: "Neural Relation Inference for Multi-dimensional Temporal Point Processes via Message Passing Graph"
 summary: ""
-authors: []
-tags: []
+authors: 
+- Dylan Ynag
+tags: 
+- Point Process
+- Statistics
+- Graph Neural Network
 categories: []
 date: 2021-09-24T17:00:31-04:00
 lastmod: 2021-09-24T17:00:31-04:00
@@ -30,9 +34,17 @@ projects: []
 
 Zhang, Yunhao, and Junchi Yan. 2021. “Neural Relation Inference for Multi-Dimensional Temporal Point Processes via Message Passing Graph.” In , 3:3406–12. https://doi.org/10.24963/ijcai.2021/469.
 
+A multidimentional(D nodes) marked(M types of possible events) TPP($N_m$ length of sequence) modeling
 
 ---
 
+Table
+
+- [Problem setting](#problem-setting)
+- [Model Framework and Overall Objective](#model-framework-and-overall-objective)
+- [Conditional Distri Modeling](#conditional-distri-modeling)
+  - [$\mathbf{h}_{j}\left(t_{n}\right)=\operatorname{GRU}_{A f f e c t}\left(\operatorname{MSG}_{\left(i_{n}, j\right)}\left(t_{n}\right), \mathbf{h}_{j}\left(t_{n}^{-}\right)\right)$](#mathbfhjlefttnrightoperatornamegrua-f-f-e-c-tleftoperatornamemsglefti_n-jrightleftt_nright-mathbfhjlefttn-rightright)
+- [Training](#training)
 
 <br><br>
 <br><br>

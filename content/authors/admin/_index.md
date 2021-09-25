@@ -22,6 +22,7 @@ interests:
 - FinTech
 - Natural Language Processing
 - Graph Neural Network
+- Temporal Graph Dynamics
 
 # Education to show in About widget
 education:
