@@ -29,6 +29,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
+
 ---
 
 Shchur, Oleksandr, Ali Caner Türkmen, Tim Januschowski, and Stephan Günnemann. 2021. “Neural Temporal Point Processes: A Review.” ArXiv:2104.03528 [Cs], August. http://arxiv.org/abs/2104.03528.
@@ -41,7 +42,6 @@ Neural TPP = TPP + Deep Learning
 Model Sequence Events: any sequential model(RNN, transfomer) + TPP
 
 
-
 ---
 
 Two kinds of model(differentiate by how to update $h$)
@@ -52,6 +52,27 @@ Two kinds of model(differentiate by how to update $h$)
 
 **small change will lead big difference for training and prediction (since we have 2 integral term over $t$)**
 
+---
+
+Table of Content:
+
+- [Autoregressive Neural TPP](#autoregressive-neural-tpp)
+  - [Representing Events as Feature Vectors](#representing-events-as-feature-vectors)
+  - [Encoding the History into a Vector](#encoding-the-history-into-a-vector)
+    - [RNN encoder](#rnn-encoder)
+    - [aggregation encoder](#aggregation-encoder)
+  - [Parameterize $\lambda$](#parameterize-lambda)
+  - [Modeling Marks](#modeling-marks)
+  - [conditioned between mark and time](#conditioned-between-mark-and-time)
+    - [time conditoned on mark](#time-conditoned-on-mark)
+- [Continuous-time State Evolution](#continuous-time-state-evolution)
+- [Compare](#compare)
+  - [In a continuous-time model:](#in-a-continuous-time-model)
+  - [In autoregressive model:](#in-autoregressive-model)
+  - [Adv and Cost](#adv-and-cost)
+- [Parameter Estimation](#parameter-estimation)
+  - [MLE](#mle)
+- [Training](#training)
 
 
 
