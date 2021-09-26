@@ -3,9 +3,11 @@
 
 title: "Where should you model timing?"
 subtitle: ""
-summary: ""
-authors: []
-tags: []
+summary: "Where you model timing effect Training and Prediction Steps"
+authors: 
+- Dylan Yang
+tags: 
+- Point Process
 categories: []
 date: 2021-09-25T20:36:02-04:00
 lastmod: 2021-09-25T20:36:02-04:00
