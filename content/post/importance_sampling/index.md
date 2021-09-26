@@ -28,11 +28,13 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
----
-
-simulating more samples in the importance area leads variance reduction.
 
 ---
+
+simulating more samples in the importance area leads variance reduction compared to tradional Monte Carlo integration which simulate from a uniform distribution.
+
+---
+
 <br><br>
 
 # Implementation

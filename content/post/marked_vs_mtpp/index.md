@@ -31,13 +31,13 @@ projects: []
 ---
 
 They are targeting "multi" on `type of interaction`, `Node` respectively:
-- Marked: Multi- types of interaction 
-- MTPP: Multi- number of Node
+- Marked: Multi- types of interaction (usually represent as $k$)
+- MTPP: Multi- number of Node 
 
 
 **One easy way to differntiate them is by the likelihood function:**
 
-(Mei and Eisner, 2020.) is modeling marked TPP:
+(Mei and Eisner, 2017) is modeling marked TPP:
 
 $$
 \ell=\sum_{i: t_{i} \leq T} \log \lambda_{k_{i}}\left(t_{i}\right)-\underbrace{\int_{t=0}^{T} \lambda(t) d t}_{\text {call this } \Lambda}
@@ -54,4 +54,16 @@ $$
 
 ---
 
+(Zhang and Yan 2021) use Multi-Marked TPP. They also introduce MTPP at Preliminaries Section:
 
+Suppose we have D-dim TPP (D = num of node, process in parallel)
+
+The likelihood:
+
+$$\log p(S)=\sum_{n=1}^{N} \log \lambda_{i_{n}}\left(t_{n}\right)-\sum_{i=1}^{D} \int_{0}^{T} \lambda_{i}(t) d t$$
+- the 2nd (negative sampling) term will increase dramatically, now has $D$ numebr of integrtion.
+
+
+---
+
+End
