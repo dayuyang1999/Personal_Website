@@ -45,7 +45,7 @@ $$
 - the left (positive sample) has "multi" ($k$ in this case)
 - the right (negative sample) has no multi.
 
-and there's a `mark generation function`:
+for `mark generation function`, if marked PP, only $\lambda(t)$ is related to t:
 
 $$
 \hat{k}_{i}=\operatorname{argmax}_{k} \int_{t_{i-1}}^{\infty} \frac{\lambda_{k}(t)}{\lambda(t)} p_{i}(t) d t
