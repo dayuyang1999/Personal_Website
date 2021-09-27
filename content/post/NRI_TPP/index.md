@@ -43,7 +43,6 @@ Table
 - [Problem setting](#problem-setting)
 - [Model Framework and Overall Objective](#model-framework-and-overall-objective)
 - [Conditional Distri Modeling](#conditional-distri-modeling)
-  - [$\mathbf{h}_{j}\left(t_{n}\right)=\operatorname{GRU}_{A f f e c t}\left(\operatorname{MSG}_{\left(i_{n}, j\right)}\left(t_{n}\right), \mathbf{h}_{j}\left(t_{n}^{-}\right)\right)$](#mathbfhjlefttnrightoperatornamegrua-f-f-e-c-tleftoperatornamemsglefti_n-jrightleftt_nright-mathbfhjlefttn-rightright)
 - [Training](#training)
 
 <br><br>
@@ -69,8 +68,8 @@ For this paper:
 
 - $D$: number of observing sequences; $i_{n}^{m} \in\{1, \ldots, D\}$ 
   - each node has one sequence, so $\mathbf{A} \in\{0,1\}^{D \times D}$
-- $N_m$: Length of each sequence; $S_{m}=\left\{\left(t_{n}^{m}, i_{n}^{m}\right)\right\}_{n=1}^{N_{m}}$
-- $M$:  types of events; $S=\left\{S_{m}\right\}_{m=1}^{M}$
+- $N_m$: Length of each sequence: $S_{m}=\left\{\left(t_{n}^{m}, i_{n}^{m}\right)\right\}_{n=1}^{N_{m}}$
+- $M$:  types of events: $S=\left\{S_{m}\right\}_{m=1}^{M}$
 
 **Multi-dim TPP: $Multi$ refers to $D$ (we seperately model every node)**
 
@@ -129,7 +128,7 @@ Do not necessarily arise a graph when talking about GNN.
 The correct steps are:
 
 1. "My neighbors influence me", or "My neighbors define who I am"
-2. msg passing mechanism
+2. msg passing mechanism + Aggregator
 3. GNN
 4. Adjacency Matrix
 5. Graph
@@ -152,6 +151,7 @@ everytime an event $\left(t_{n}, i_{n}\right)$ occurs, $\mathbf{h}(t)$ will be u
    1. time switch term, for a constant update process
 2. Self-Update
 3. Affected-Update
+   1. other's event, info pass through a GNN
 
 <br><br>
 
@@ -175,7 +175,9 @@ event in dimension $i_n$ can effect the hidden state of other dimensions $j \neq
 $\operatorname{MSG}_{\left(i_{n}, j\right)}\left(t_{n}\right)=A_{j i_{n}} f_{M S G}\left(\left[\mathbf{h}_{i_{n}}\left(t_{n}\right), \mathbf{h}_{j}\left(t_{n}^{-}\right)\right]\right)$
 - first update myself, and then update "others" via msg passing
 - "others" follow same RNN logic...update their $h$
+  
 $\mathbf{h}_{j}\left(t_{n}\right)=\operatorname{GRU}_{A f f e c t}\left(\operatorname{MSG}_{\left(i_{n}, j\right)}\left(t_{n}\right), \mathbf{h}_{j}\left(t_{n}^{-}\right)\right)$
+
 ---
 
 <br><br>
