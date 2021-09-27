@@ -89,7 +89,8 @@ Monte Carlo Integration
 1. samples several realizations of the random variable
 2. see what percentage of the trails are in the tail beyond the threshold $\gamma$
 
-$$\widehat{p}_{\gamma}=\frac{1}{K} \sum_{k=1}^{K} u\left(X_{k}-\gamma\right)$$
+![](https://cdn.mathpix.com/snip/images/ppzpI1MJ1Cv6OwX7K5pWvD_uD2d03cHli8Pe3i-nJZI.original.fullsize.png)
+
 - count the value larger than $\gamma$ and divide by the number of trail $K$
 
 
@@ -99,12 +100,11 @@ Following the property of binominal distribution, we could easily get:
 
 This estimator is an unbiased estimator that:
 
-$$E\left[\widehat{p}_{\gamma}\right]=p_{\gamma}$$
+![](https://cdn.mathpix.com/snip/images/dGHwvfEaIOSzhR_jmnDS4NjaPHdkkSrfEDJMNd59bT8.original.fullsize.png)
 
 The variance:
 
-$$\operatorname{var}\left[\widehat{p}_{\gamma}\right]=\frac{p_{\gamma}\left(1-p_{\gamma}\right)}{K}$$
-
+![](https://cdn.mathpix.com/snip/images/jIitggfyTfnb_sv0HXlhSh-l2sJulkW0EXOtk3ZbOIE.original.fullsize.png)
 
 However, how efficient is this algorithm? (how many trails we need to reach a certain level of variance?)
 
@@ -122,23 +122,20 @@ However, how efficient is this algorithm? (how many trails we need to reach a ce
 
 ![](https://cdn.mathpix.com/snip/images/a_DMFacC7gz79001Z0Zg1HjIamni5h4a3N8aWPaX_vk.original.fullsize.png)
 
-$$\begin{aligned} \operatorname{Pr}[X \geq \gamma] &=\int_{\gamma}^{\infty} f_{X}(x) d x \\ &=\int_{\gamma}^{\infty} \frac{f_{X}(x)}{f_{Y}(x)} f_{Y}(x) d x \\ &=p_{\gamma} \end{aligned}$$
+$$\begin{aligned} \operatorname{Pr}[X \geq \gamma] &=\int_{\gamma}^{\infty} f_{X}(x) d x \\\\ &=\int_{\gamma}^{\infty} \frac{f_{X}(x)}{f_{Y}(x)} f_{Y}(x) d x \\\\ &=p_{\gamma} \end{aligned}$$
 - adjust the estimate so the result still equal to desired probability.
 
 
 The estimator for $p_\gamma$ is 
 
-$$
-\widehat{p}_{\gamma}=\frac{1}{K} \sum_{k=1}^{K} \frac{u\left(Y_{k}-\gamma\right) f_{X}\left(Y_{k}\right)}{f_{Y}\left(Y_{k}\right)}
-$$
+![](https://cdn.mathpix.com/snip/images/Vq5jynRXTQdPDI5A1ZiwVF65jD5-CNsdQ847lFgcQEI.original.fullsize.png)
+
 - u is a filter that counting the number lies on the green area.
 
 
 Variance follows variance average equation:
 
-$$
-\operatorname{var}\left[\widehat{p}_{\gamma}\right]=\frac{\operatorname{var}\left[\frac{u(Y-\gamma) f_{X}(Y)}{f_{Y}(Y)}\right]}{K}
-$$
+![](https://cdn.mathpix.com/snip/images/uMXI9qA-dqi7dx3j5ojC-Dq9s94icBMHWl7VtZU17Vk.original.fullsize.png)
 
 ---
 
@@ -150,12 +147,13 @@ assume the blue distri and the red are gaussian with unit variance:
 
 $$
 \begin{array}{l}
-X \simeq \mathcal{N}(0,1) \\
+X \simeq \mathcal{N}(0,1) \\\\
 Y \simeq \mathcal{N}(\gamma, 1)
 \end{array}
 $$
 
-since importance sampling is a variance reduction method, we focus on the variance term:$\operatorname{var}\left[\widehat{p}_{\gamma}\right]=\frac{\operatorname{var}\left[\frac{u(Y-\gamma) f_{X}(Y)}{f_{Y}(Y)}\right]}{K}$
+since importance sampling is a variance reduction method, we focus on the variance term:
+![](https://cdn.mathpix.com/snip/images/vigBtuYkH9rlzj8JkruDnEzGArl7QMch_ULoxxGsf8Y.original.fullsize.png)
 
 
 Recall that $Var(.) = (2nd-moment) - (1st-moment)^2$.
@@ -211,12 +209,12 @@ $$\mu=\int_{\mathcal{D}} f(\boldsymbol{x}) p(\boldsymbol{x}) \mathrm{d} \boldsym
 
 Then the "importance sampling version" of estimate of $\mu=\mathbb{E}_{p}(f(\boldsymbol{X}))$ is:
 
-$$\hat{\mu}_{q}=\frac{1}{n} \sum_{i=1}^{n} \frac{f\left(\boldsymbol{X}_{i}\right) p\left(\boldsymbol{X}_{i}\right)}{q\left(\boldsymbol{X}_{i}\right)}, \quad \boldsymbol{X}_{i} \sim q$$
+![](https://cdn.mathpix.com/snip/images/vigBtuYkH9rlzj8JkruDnEzGArl7QMch_ULoxxGsf8Y.original.fullsize.png)
 
 
 And the variance of estimate:
 
-$$\operatorname{Var}_{q}\left(\hat{\mu}_{q}\right)=\frac{1}{n}\left[\int_{\mathcal{Q}}\left(\frac{f(\boldsymbol{x}) p(\boldsymbol{x})}{q(\boldsymbol{x})}\right)^{2} q(\boldsymbol{x}) \mathrm{d} \boldsymbol{x}-\mu^{2}\right]$$
+![](https://cdn.mathpix.com/snip/images/3kc5UZu5XVvMvv3dNyaGq_OX0pZf4K-TI1iz_rrfWOI.original.fullsize.png)
 
 
 ---
