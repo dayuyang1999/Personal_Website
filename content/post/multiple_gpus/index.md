@@ -6,7 +6,8 @@ subtitle: ""
 summary: ""
 authors: 
 - Dylan Yang
-tags: []
+tags: 
+- Pytorch
 categories: []
 date: 2021-10-09T14:30:26-04:00
 lastmod: 2021-10-09T14:30:26-04:00
