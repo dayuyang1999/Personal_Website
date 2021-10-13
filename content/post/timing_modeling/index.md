@@ -55,9 +55,7 @@ $h(t)$
 
 first, as Mei, who model the timing into $h$ ($h$ is a function of $t$). He make the memory cell of LSTM to change constantly with time:
 
-$$
-\mathbf{c}(t) \stackrel{\text { del }}{=} \overline{\mathbf{c}}_{i+1}+\left(\mathbf{c}_{i+1}-\overline{\mathbf{c}}_{i+1}\right) \exp \left(-\boldsymbol{\delta}_{i+1}\left(t-t_{i}\right)\right) \text { for } t \in\left(t_{i}, t_{i+1}\right]
-$$
+![](https://cdn.mathpix.com/snip/images/d6v_mE7pSk0gyDAYmXwj-xjLvrtHbv59fMW1o9l3-vk.original.fullsize.png)
 
 That is saying: $t$ is modeled into a very complex black box: LSTM(no way to do analytical analysis to $h$). Then, $h$ is a function of $t$ (an argument):
 
@@ -80,9 +78,7 @@ $h_{j}$
 
 Then we see Du's, he modeled timing outside $h$: 
 
-$$
-\lambda^{*}(t)=\exp \left(\boldsymbol{v}^{t^{\top}} \cdot \boldsymbol{h}_{j}+w^{t}\left(t-t_{j}\right)+b^{t}\right).
-$$
+![](https://cdn.mathpix.com/snip/images/wVjCSY6M9W7iCrIR7lEqK6JdvjPB4IM1AqzTqZNJpJI.original.fullsize.png)
 - You could see $h_j$ means "the most $h$". That is saying every time the model meet an event, RNN will discretly update $h$ once. So $h$ only has a subscript "j" , to represent this $h$ is the one RNN given after $j$th event.
 - Another thing is that timing is modeled in $w^{t}\left(t-t_{j}\right)$, which is very simple and independent to $h$
 
