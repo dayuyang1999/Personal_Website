@@ -31,7 +31,18 @@ projects: []
 ---
 
 
-
+- [Buy a PC with Nvidia GPU](#buy-a-pc-with-nvidia-gpu)
+- [Install Liunx](#install-liunx)
+- [Get connect to Server](#get-connect-to-server)
+  - [add a sudo user](#add-a-sudo-user)
+  - [ssh connection](#ssh-connection)
+    - [get internet connection](#get-internet-connection)
+    - [get IP address](#get-ip-address)
+    - [install ssh in the server](#install-ssh-in-the-server)
+    - [generate rsa key pair](#generate-rsa-key-pair)
+    - [send public to server](#send-public-to-server)
+    - [config ssh file](#config-ssh-file)
+- [install dependencies](#install-dependencies)
 
 
 # Buy a PC with Nvidia GPU
