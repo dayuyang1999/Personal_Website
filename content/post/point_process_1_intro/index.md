@@ -59,7 +59,7 @@ Assume T is a continuous random variable, it may represent "Length of Survival T
 Then, "the probability that this patient could live longer than t" is defined as `Survival Function` $S$:
 
 $$
-S(t)=\operatorname{Pr}\{T \geq t\}=1-F(t)=\int\_{t}^{\infty} f(x) d x
+S(t)=\operatorname{Pr}\{T \geq t\}=1-F(t)=\int_{t}^{\infty} f(x) d x
 $$
 
 <br><br>
@@ -71,13 +71,13 @@ Then, the patient still survive at time point t, but he is still in danger of, s
 We define the instantaneous rate of occurrence of the event as `hazard function`:
 
 $$
-\lambda(t)=\lim \_{d t \rightarrow 0} \frac{\operatorname{Pr}\{t \leq T<t+d t \mid T \geq t\}}{d t}
+\lambda(t)=\lim _{d t \rightarrow 0} \frac{\operatorname{Pr}\{t \leq T<t+d t \mid T \geq t\}}{d t}
 $$
 
 Here is a equavalent definition:
 
 $$
-\lambda(t)=\lim \_{d t \rightarrow 0} \frac{\operatorname{Pr}{(N(t+dt)- N(t)=1)}}{d t}
+\lambda(t)=\lim _{d t \rightarrow 0} \frac{\operatorname{Pr}{(N(t+dt)- N(t)=1)}}{d t}
 $$
 
 - $\lambda$ could be roughly seen as the *1st derivitive* of the probability
@@ -99,7 +99,7 @@ $$Pr(A|B) = \frac{Pr(AB)}{Pr(B)}$$
 
   - $$P(t \leq T<t+d t ,\; T \geq t) = P(t \leq T<t+d t)$$
   - When $dt$ is a small interval:
-    - $$P(t \leq T<t+d t)=\int\_{t}^{t+dt} f(x)dx \approx f(t)\times dt$$
+    - $$P(t \leq T<t+d t)=\int_{t}^{t+dt} f(x)dx \approx f(t)\times dt$$
 
 
 - For the denumerator:
@@ -133,11 +133,11 @@ $$\lambda(t) = -\frac{d}{d t} \log S(t) $$
 
 if we integrate from $0$ to $t$ for both side:
 
-$$\int\_{0}^{t} \lambda(u) du = - (logS(t) - logS(0))$$
+$$\int_{0}^{t} \lambda(u) du = - (logS(t) - logS(0))$$
 
 Since $S(0) =  P(T>0) = 1$, can be simplied as:
 
-$$\int\_{0}^{t} \lambda(u) du = - logS(t)$$
+$$\int_{0}^{t} \lambda(u) du = - logS(t)$$
 
 ---
 Note:
@@ -148,7 +148,7 @@ We could take the integral from $t_k$ to $t$ intead of $0$ to $t$:
 
 The result is 
 
-$$\int\_{0}^{t} \lambda(u) du = - (logS(t) - logS(t_k))$$
+$$\int_{0}^{t} \lambda(u) du = - (logS(t) - logS(t_k))$$
 
 Similarily, we already know there's no event happened before $t_k$, that means $S(t_k) = Pr(T>t_k)=1$
 
@@ -162,7 +162,7 @@ $$S(t) = \exp\left(-\int_0^t \lambda(x)dx\right)$$
 
 
 - the integral term is called `the cumulative hazard` (or cumulative risk):
-  - $$\Lambda(t)=\int\_{0}^{t} \lambda(x) dx$$
+  - $$\Lambda(t)=\int_{0}^{t} \lambda(x) dx$$
     - You may think of $Λ(t)$ as the sum of the risks you face going from duration 0 to t.
 
 
