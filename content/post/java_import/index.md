@@ -30,7 +30,7 @@ image:
 projects: []
 ---
 
-A common issue you face when switching environment using conda or different envs depends on different Java version.
+A common issue you face when switching environment using conda or different envs depends on different Java version. Here is the solution.
 
 
 # Find where jdk installed
