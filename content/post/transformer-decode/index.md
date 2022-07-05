@@ -30,7 +30,29 @@ image:
 projects: []
 ---
 
+- [Basic math: auto-regressive language generation](#basic-math-auto-regressive-language-generation)
+- [Decoding methods](#decoding-methods)
+  - [Greedy Search](#greedy-search)
+    - [Definition](#definition)
+    - [Example](#example)
+    - [Feature](#feature)
+  - [Beam Search](#beam-search)
+    - [Definition](#definition-1)
+    - [examplle](#examplle)
+    - [Feature](#feature-1)
+    - [Code](#code)
+    - [Some function features of beam search](#some-function-features-of-beam-search)
+    - [Why beam search might not be good in open-ended generation](#why-beam-search-might-not-be-good-in-open-ended-generation)
+  - [Sampling](#sampling)
+    - [issue 1 with sampling: coherent](#issue-1-with-sampling-coherent)
+  - [Top-K Sampling](#top-k-sampling)
+    - [An example](#an-example)
+    - [Good and Bad](#good-and-bad)
+  - [Top-p (nucleus) sampling --- revised top-k sampling](#top-p-nucleus-sampling-----revised-top-k-sampling)
+    - [an example](#an-example-1)
+    - [Top-K + Top-P](#top-k--top-p)
 
+---
 
 # Basic math: auto-regressive language generation
 
@@ -285,7 +307,7 @@ for i, sample_output in enumerate(sample_outputs):
 
 ---
 
-reference:
+Reference:
 - https://huggingface.co/blog/how-to-generate
 - transformers.generation_utils.GenerationMixin.generate
 
