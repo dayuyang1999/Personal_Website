@@ -30,7 +30,7 @@ education:
   - course: Ph.D. in Financial Services Analytics 
     institution: University of Delaware
   - course: M.S. in Computer Science
-    institution: Georgia Institute of Technology
+    institution: University of Texas, Austin
 
 
 
