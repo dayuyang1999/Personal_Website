@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Dylan Yang
+title: Dayu Yang
 
 # Is this the primary user of the site?
 superuser: true
@@ -14,23 +14,22 @@ organizations:
   url: https://www.udel.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am excited about Fintech. My current research focuses on design algorithms and methods to solve critical and challenging problems in business and society. 
+bio: I am excited about NLP, Information Retrieval, and Algorithm Trading. My current research focuses on Conversational AI systems. 
 
 # Interests to show in About widget
 interests:
 - Deep Learning
-- FinTech
 - Natural Language Processing
+- Information Retrieval
+- Algorithm Trading
 - Graph Neural Network
-- Temporal Graph Dynamics
 
 # Education to show in About widget
 education:
   courses:
   - course: Ph.D. in Financial Services Analytics 
     institution: University of Delaware
-  - course: M.S. in Computer Science
-    institution: University of Texas, Austin
+
 
 
 
@@ -68,6 +67,6 @@ email: "dayu at udel dot edu"
 highlight_name: false
 ---
 
-Dylan Yang is a 1st-year PhD student at {{< staticref "http://www.dalab.info/team/" "newtab" >}}Dalab{{< /staticref >}}, Institute of Financial Services Analytics. He is excited about Fintech. His current research focuses on design algorithms and methods to solve critical and challenging problems in business and society.
+Dylan Yang is a 3rd-year PhD student at Infolab, and supervised by {{< staticref "https://www.eecis.udel.edu/~hfang/" "newtab" >}}Professor Fang{{< /staticref >}}. He is excited about NLP, text mining, Information Retrieval. His current research focuses on Conversational Information Systems.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
